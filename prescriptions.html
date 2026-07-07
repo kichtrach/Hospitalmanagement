@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prescriptions | OP Ticket</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="assets/css/dashboard.css" rel="stylesheet">
+<link href="assets/css/tokens.css" rel="stylesheet">
+<link href="assets/css/prescriptions.css" rel="stylesheet"/>
+</link></link></link><link rel="stylesheet" href="assets/css/common-fix.css"></head>
+<body class="prescriptions-page">
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+<div class="brand">
+<div class="brand-mark">
+<svg viewbox="0 0 48 48"><path d="M34.5 7.8c-2.1-2.3-5.1-3.7-8.5-3.7-5.6 0-10.3 4-11.3 9.3-5.7.9-10 5.8-10 11.8 0 6.6 5.4 12 12 12h1.1v-6.2h-1.1c-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8h3.9v-3.8c0-3.1 2.4-5.5 5.5-5.5 1.9 0 3.6 1 4.6 2.5l1.2 1.9 2-1c.8-.4 1.6-.6 2.5-.6 3.2 0 5.7 2.6 5.7 5.7 0 2.8-2 5.1-4.6 5.6v6.3c6.1-.6 10.8-5.7 10.8-11.9 0-6.6-5.3-12-12-12-.6 0-1.2.1-1.8.2z"></path><path d="M22 20.5h17.2v20.9H22z" opacity=".2"></path><path d="M25 23.5h11.2v14.9H25z"></path><path d="M29.4 26.9l5.3 3.8-5.3 3.8v-7.6z" fill="#fff"></path></svg>
+</div>
+<div><div class="brand-text"><span>OP</span>ticket</div><small>Book Smart. Visit Easy.</small></div>
+</div>
+<button class="mobile-close" id="closeSidebar">×</button>
+<nav class="menu">
+<a class="menu-item" href="patient-dashboard.html"><i class="ico fa-solid fa-house"></i><span>Dashboard</span></a>
+<a class="menu-item" href="my-appointments.html"><i class="ico fa-regular fa-calendar-check"></i><span>My Appointments</span></a>
+<a class="menu-item" href="my-tokens.html"><i class="ico fa-solid fa-ticket"></i><span>My Tokens</span></a>
+<a class="menu-item" href="medical-records.html"><i class="ico fa-regular fa-file-lines"></i><span>Medical Records</span></a>
+<a class="menu-item active" href="prescriptions.html"><i class="ico fa-solid fa-prescription"></i><span>Prescriptions</span></a>
+<a class="menu-item" href="lab-reports.html"><i class="ico fa-solid fa-flask"></i><span>Lab Reports</span></a>
+<a class="menu-item" href="#payments"><i class="ico fa-regular fa-credit-card"></i><span>Payments &amp; Bills</span></a>
+<a class="menu-item" href="my-profile.html"><i class="ico fa-regular fa-user"></i><span>My Profile</span></a>
+<a class="menu-item" href="my-family.html"><i class="ico fa-solid fa-user-group"></i><span>My Family</span></a>
+<a class="menu-item" href="#notifications"><i class="ico fa-regular fa-bell"></i><span>Notifications</span><b class="notif-dot">3</b></a>
+<a class="menu-item" href="raise-ticket.html"><i class="ico fa-regular fa-circle-question"></i><span>Help &amp; Support</span></a>
+<a class="menu-item" href="#settings"><i class="ico fa-solid fa-gear"></i><span>Settings</span></a>
+<a class="menu-item" href="index.html"><i class="ico fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+</nav>
+
+</aside>
+<main class="main">
+<header class="topbar">
+<button aria-label="Open menu" class="hamburger" id="openSidebar"><i class="fa-solid fa-bars"></i></button>
+<div class="page-title"><h1>Prescriptions</h1><p>View, download and manage all your prescriptions</p></div>
+<div class="top-actions">
+<div class="help-inline"><i class="fa-regular fa-circle-question"></i><span>Need Help?</span></div>
+<div class="notif" id="notifBtn"><i class="bell fa-regular fa-bell"></i><b>3</b><div class="dropdown notif-menu" id="notifMenu"><h4>Notifications</h4><p>Prescription #RX12345 is ready</p><p>Medicine reminder at 8:00 PM</p></div></div>
+<div class="profile" id="profileBtn"><img alt="Priya Sharma" class="avatar" src="assets/images/profile-priya.png"/><span>Priya Sharma</span><i class="fa-solid fa-chevron-down profile-chevron"></i><div class="dropdown profile-menu" id="profileMenu"><a href="my-profile.html">My Profile</a><a href="my-family.html">Family Members</a><a>Settings</a><a href="index.html">Logout</a></div></div>
+</div>
+</header>
+<section class="prescription-page">
+<div class="rx-layout">
+<div class="rx-main">
+<div class="rx-stats">
+<article class="rx-stat active" data-filter="all"><span class="rx-stat-icon purple"><i class="fa-solid fa-file-prescription"></i></span><div><b>Total Prescriptions</b><strong>24</strong><small>All time</small></div></article>
+<article class="rx-stat" data-filter="year"><span class="rx-stat-icon green"><i class="fa-regular fa-calendar-days"></i></span><div><b>This Year</b><strong>18</strong><small>2025</small></div></article>
+<article class="rx-stat" data-filter="month"><span class="rx-stat-icon orange"><i class="fa-regular fa-clock"></i></span><div><b>This Month</b><strong>3</strong><small>May 2025</small></div></article>
+<article class="rx-stat" data-filter="new"><span class="rx-stat-icon pink"><i class="fa-regular fa-heart"></i></span><div><b>Unread/ New</b><strong>2</strong><small>Not Viewed</small></div></article>
+</div>
+<div class="rx-filters">
+<label class="rx-search"><i class="fa-solid fa-magnifying-glass"></i><input id="rxSearch" placeholder="Search by doctor, hospital or medication..."/></label>
+<div class="rx-date-filter" id="rxDateFilter"><i class="fa-regular fa-calendar-days"></i><span class="rx-date-text">Select Date Range</span><i class="fa-solid fa-chevron-down small-action"></i>
+<div class="rx-date-popup" id="rxDatePopup"><div class="rx-cal-head"><button id="prevRxCal"><i class="fa-solid fa-chevron-left"></i></button><b id="rxCalLabel">May 2025</b><button id="nextRxCal"><i class="fa-solid fa-chevron-right"></i></button></div><div class="rx-cal-grid" id="rxCalGrid"></div><div class="cal-foot"><button id="clearRxDate">Clear</button><button id="todayRxDate">Today</button></div></div>
+</div>
+<button class="rx-filter-btn" id="rxFilterBtn"><i class="fa-solid fa-filter"></i> Filters</button>
+<div class="rx-filter-menu" id="rxFilterMenu"><button data-type="all">All Departments</button><button data-type="Cardiology">Cardiology</button><button data-type="Dermatology">Dermatology</button><button data-type="Pediatrics">Pediatrics</button><button data-type="General Medicine">General Medicine</button></div>
+</div>
+<h2 class="rx-title">All Prescriptions</h2>
+<div class="rx-table-card"><div class="rx-table"><div class="rx-head"><div>Prescription Details</div><div>Doctor &amp; Department</div><div>Date</div><div>Hospital</div><div>Action</div></div><div id="rxRows"></div></div><div id="rxCards"></div></div>
+<div class="rx-footer"><span id="rxCount">Showing 1 to 6 of 24 prescriptions</span><div class="rx-pages"><button><i class="fa-solid fa-chevron-left"></i></button><button class="active">1</button><button>2</button><button>3</button><button>4</button><button><i class="fa-solid fa-chevron-right"></i></button></div></div>
+</div>
+<aside class="rx-sidebar">
+<div class="rx-side-card"><h3>Prescriptions Summary</h3><div class="rx-donut"><div><b>24</b><span>Total</span></div></div><div class="rx-legend"><i style="background:#6b35e8"></i><span>Cardiology</span><b>8  (33%)</b></div><div class="rx-legend"><i style="background:#20b56b"></i><span>Dermatology</span><b>6  (25%)</b></div><div class="rx-legend"><i style="background:#f2498f"></i><span>Pediatrics</span><b>5  (21%)</b></div><div class="rx-legend"><i style="background:#ff9813"></i><span>Others</span><b>5  (21%)</b></div></div>
+<div class="rx-side-card"><h3>Most Common Medications</h3><ul class="med-list"><li><span>Ecosprin AV 75</span><b>12 times</b></li><li><span>Telma 40</span><b>10 times</b></li><li><span>Atorva 10</span><b>9 times</b></li><li><span>Pantop 40</span><b>8 times</b></li><li><span>Azithral 500</span><b>7 times</b></li></ul></div>
+<div class="rx-side-card help-card"><h3>Need Help?</h3><p>If you have any questions regarding your prescriptions, our support team is here to help.</p><button class="support-btn"><i class="fa-solid fa-headset"></i> Contact Support</button></div>
+</aside>
+</div>
+</section>
+</main>
+</div>
+<div class="rx-context" id="rxContext"></div>
+<div class="rx-drawer" id="rxDrawer">
+<aside class="rx-drawer-panel">
+<div class="rx-drawer-head"><h2>Prescription Details</h2><button aria-label="Close" id="closeRxDrawer"><i class="fa-solid fa-xmark"></i></button></div>
+<div class="rx-pill" id="rxDrawerPill">Prescription #RX12345</div>
+<div class="rx-info-grid">
+<div class="rx-info-card patient"><span><i class="fa-solid fa-file-prescription"></i></span><div><b>Patient Details</b><p>Priya Sharma<br/>28 Y / Female<br/>9876543210</p></div></div>
+<div class="rx-info-card"><b>Visit Details</b><p id="rxVisitText">20 May 2025, 10:30 AM<br/>OP Consultation<br/>City Care Hospital, Delhi</p></div>
+</div>
+<div class="rx-doctor-card"><img alt="Doctor" id="rxDoctorImg" src="assets/images/doctor-arvind.png"/><div><h3 id="rxDoctorName">Dr. Arvind Sharma</h3><b id="rxDoctorQual">MBBS, MD (Cardiology)</b><p id="rxDoctorDept">Cardiology (OP)</p></div><div><small>Reg. No.</small><b id="rxReg">C-12456</b></div></div>
+<div class="rx-detail-section"><h3>Diagnosis</h3><p id="rxDiagnosis">Hypertension (Stage 1)</p></div>
+<div class="rx-detail-section"><h3>Medications</h3><div class="rx-med-table"><div class="med-head"><span>Medicine</span><span>Dosage</span><span>Frequency</span><span>Duration</span><span>Instructions</span></div><div id="rxMedicineRows"></div></div></div>
+<div class="rx-detail-section"><h3>Advice</h3><ul id="rxAdvice"></ul></div>
+<div class="rx-sign"><p>Arvind</p><b id="rxSignDoctor">Dr. Arvind Sharma</b><span id="rxSignQual">MBBS, MD (Cardiology)<br/>Reg. No. C-12456</span></div>
+<div class="rx-confidential"><i class="fa-solid fa-shield-halved"></i> This document is confidential and for your personal use only.</div>
+<div class="rx-drawer-actions"><button id="downloadRxPdf"><i class="fa-solid fa-download"></i> Download PDF</button><button id="downloadRxImage"><i class="fa-regular fa-file-image"></i> Download Image</button><button class="primary" id="closeRxBottom">Close</button></div>
+</aside>
+</div>
+<script src="assets/js/prescriptions.js"></script>
+<script src="assets/js/ui-fixes.js"></script><script src="assets/js/common-fix.js"></script></body>
+</html>

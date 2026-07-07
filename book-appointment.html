@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Appointment - OPticket</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/booking.css" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/common-fix.css"></head>
+<body>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="booking-shell">
+<aside class="booking-sidebar sidebar" id="bookSidebar">
+<div class="brand">
+<div class="brand-mark">
+<svg viewbox="0 0 48 48"><path d="M34.5 7.8c-2.1-2.3-5.1-3.7-8.5-3.7-5.6 0-10.3 4-11.3 9.3-5.7.9-10 5.8-10 11.8 0 6.6 5.4 12 12 12h1.1v-6.2h-1.1c-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8h3.9v-3.8c0-3.1 2.4-5.5 5.5-5.5 1.9 0 3.6 1 4.6 2.5l1.2 1.9 2-1c.8-.4 1.6-.6 2.5-.6 3.2 0 5.7 2.6 5.7 5.7 0 2.8-2 5.1-4.6 5.6v6.3c6.1-.6 10.8-5.7 10.8-11.9 0-6.6-5.3-12-12-12-.6 0-1.2.1-1.8.2z"></path><path d="M22 20.5h17.2v20.9H22z" opacity=".2"></path><path d="M25 23.5h11.2v14.9H25z"></path><path d="M29.4 26.9l5.3 3.8-5.3 3.8v-7.6z" fill="#fff"></path></svg>
+</div>
+<div><div class="brand-text"><span>OP</span>ticket</div><small>Book Smart. Visit Easy.</small></div>
+</div>
+<button class="mobile-close" id="closeSidebar" type="button">×</button>
+<nav class="booking-menu menu">
+<a class="menu-item" href="patient-dashboard.html"><i class="ico fa-solid fa-house"></i><span>Dashboard</span></a>
+<a class="menu-item active" href="book-appointment.html"><i class="ico fa-regular fa-calendar-check"></i><span>My Appointments</span></a>
+<a class="menu-item" href="my-tokens.html"><i class="ico fa-solid fa-ticket"></i><span>My Tokens</span></a>
+<a class="menu-item" href="medical-records.html"><i class="ico fa-regular fa-file-lines"></i><span>Medical Records</span></a>
+<a class="menu-item" href="prescriptions.html"><i class="ico fa-solid fa-prescription"></i><span>Prescriptions</span></a>
+<a class="menu-item" href="lab-reports.html"><i class="ico fa-solid fa-flask"></i><span>Lab Reports</span></a>
+<a class="menu-item" href="#payments"><i class="ico fa-regular fa-credit-card"></i><span>Payments &amp; Bills</span></a>
+<a class="menu-item" href="my-profile.html"><i class="ico fa-regular fa-user"></i><span>My Profile</span></a>
+<a class="menu-item" href="my-family.html"><i class="ico fa-solid fa-user-group"></i><span>My Family</span></a>
+<a class="menu-item" href="#notifications"><i class="ico fa-regular fa-bell"></i><span>Notifications</span><span class="booking-badge">3</span></a>
+<a class="menu-item" href="raise-ticket.html"><i class="ico fa-regular fa-circle-question"></i><span>Help &amp; Support</span></a>
+<a class="menu-item" href="#settings"><i class="ico fa-solid fa-gear"></i><span>Settings</span></a>
+<a class="menu-item" href="index.html"><i class="ico fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+</nav>
+
+</aside>
+<main class="booking-main">
+<header class="booking-topbar">
+<div class="page-title"><button class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button><a class="back-icon" href="patient-dashboard.html"><i class="fa-solid fa-arrow-left"></i></a><div><h1>Book Appointment</h1><p>Schedule your visit in a few simple steps</p></div></div>
+<div class="header-actions top-actions">
+<div class="help-link help-inline"><i class="fa-regular fa-circle-question"></i><span>Need Help?</span></div>
+<button aria-expanded="false" aria-label="Notifications" class="header-bell notif" id="notifBtn" type="button">
+<i class="fa-regular fa-bell"></i><b>3</b>
+<div class="dropdown notif-menu" id="notifMenu">
+<h4>Notifications</h4>
+<p>Upcoming appointment in 2 days</p>
+<p>Your token turn is near</p>
+<p>Refund processed successfully</p>
+</div>
+</button>
+<button aria-expanded="false" aria-label="Profile menu" class="user-profile profile" id="profileBtn" type="button">
+<img alt="Priya Sharma" class="avatar" src="assets/images/profile-priya.png"/><span>Priya Sharma</span><i class="fa-solid fa-chevron-down profile-chevron"></i>
+<div class="dropdown profile-menu" id="profileMenu"><a href="my-profile.html">My Profile</a><a href="my-family.html">Family Members</a><a href="#settings">Settings</a><a href="index.html">Logout</a></div>
+</button>
+</div>
+</header>
+<div class="step-wrap"><div class="steps-line">
+<div class="step active"><span class="num">1</span><h5>Select Department</h5><p>Choose speciality</p></div><div class="step"><span class="num">2</span><h5>Select Doctor</h5><p>Choose your doctor</p></div><div class="step"><span class="num">3</span><h5>Select Date &amp; Time</h5><p>Pick date and time</p></div><div class="step"><span class="num">4</span><h5>Patient Details</h5><p>Provide information</p></div><div class="step"><span class="num">5</span><h5>Payment</h5><p>Choose payment option</p></div><div class="step"><span class="num">6</span><h5>Confirmation</h5><p>Review &amp; confirm</p></div>
+</div></div>
+<div class="booking-layout">
+<section class="booking-content">
+<div class="step-page active" data-step="1">
+<h2 class="section-title">1. Select Department</h2><p class="section-sub">Choose the hospital and department or specialty you want to consult.</p>
+<div class="control-row card"><div class="field"><label>Select Hospital</label><div class="select"><i class="fa-regular fa-hospital"></i><select id="hospitalSelect">
+<option>City Care Hospital, Delhi</option>
+<option>Apollo Hospital, Delhi</option>
+<option>Aster Medcity</option>
+<option>Amrita Hospital</option>
+<option>KIMS Hospital</option>
+<option>Lakeshore Hospital</option>
+<option>Baby Memorial Hospital</option>
+</select><i class="fa-solid fa-chevron-down"></i></div></div><div class="field"><label>Select Department</label><div class="select"><select id="departmentSelect">
+<option value="">Choose Department</option>
+<option>Cardiology</option>
+<option>General Physician</option>
+<option>Dermatology</option>
+<option>Pediatrics</option>
+<option>Orthopedics</option>
+<option>Neurology</option>
+<option>Gynecology</option>
+<option>Ophthalmology</option>
+<option>ENT</option>
+<option>Gastroenterology</option>
+<option>Endocrinology</option>
+<option>Urology</option>
+<option>Pulmonology</option>
+<option>Oncology</option>
+<option>Psychiatry</option>
+<option>Nephrology</option>
+<option>Rheumatology</option>
+<option>Hematology</option>
+<option>Physiotherapy</option>
+<option>Allergy &amp; Immunology</option>
+</select><i class="fa-solid fa-chevron-down"></i></div></div><div class="field"><label> </label><div class="input"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search department..."/></div></div></div>
+<div class="dept-grid">
+<div class="dept-card selected" data-dept="Cardiology"><div class="dept-icon" style="background:#f1e9ff;color:#652de0"><i class="fa-solid fa-heart-pulse"></i></div><div><h3>Cardiology</h3><p>Heart, blood vessels and cardiovascular care</p><b>24+ Doctors</b></div></div>
+<div class="dept-card" data-dept="General Physician"><div class="dept-icon" style="background:#eafaf1;color:#19a05d"><i class="fa-solid fa-stethoscope"></i></div><div><h3>General Physician</h3><p>General health checkup and consultation</p><b>32+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Dermatology"><div class="dept-icon" style="background:#fff1e7;color:#ff8a1e"><i class="fa-solid fa-lungs"></i></div><div><h3>Dermatology</h3><p>Skin, hair, nail and cosmetic treatments</p><b>18+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Pediatrics"><div class="dept-icon" style="background:#ffeaf4;color:#f03d87"><i class="fa-solid fa-baby"></i></div><div><h3>Pediatrics</h3><p>Child health and development</p><b>20+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Orthopedics"><div class="dept-icon" style="background:#e9f5ff;color:#268ded"><i class="fa-solid fa-bone"></i></div><div><h3>Orthopedics</h3><p>Bone, joint and muscle care</p><b>22+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Neurology"><div class="dept-icon" style="background:#f0e9ff;color:#652de0"><i class="fa-solid fa-brain"></i></div><div><h3>Neurology</h3><p>Brain, spine and nerve disorders</p><b>16+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Gynecology"><div class="dept-icon" style="background:#ffeaf4;color:#f03d87"><i class="fa-solid fa-person-pregnant"></i></div><div><h3>Gynecology</h3><p>Women's health and reproductive care</p><b>19+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Ophthalmology"><div class="dept-icon" style="background:#e7fbfc;color:#28b7bd"><i class="fa-regular fa-eye"></i></div><div><h3>Ophthalmology</h3><p>Eye care and vision treatments</p><b>14+ Doctors</b></div></div>
+<div class="dept-card" data-dept="ENT"><div class="dept-icon" style="background:#fff1e7;color:#ff8a1e"><i class="fa-solid fa-ear-listen"></i></div><div><h3>ENT</h3><p>Ear, nose, throat and allergy care</p><b>12+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Gastroenterology"><div class="dept-icon" style="background:#eafaf1;color:#19a05d"><i class="fa-solid fa-stomach"></i></div><div><h3>Gastroenterology</h3><p>Digestive system and liver disorders</p><b>15+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Endocrinology"><div class="dept-icon" style="background:#eaf5ff;color:#268ded"><i class="fa-solid fa-staff-snake"></i></div><div><h3>Endocrinology</h3><p>Hormone and diabetes management</p><b>10+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Urology"><div class="dept-icon" style="background:#f1e9ff;color:#652de0"><i class="fa-solid fa-kidneys"></i></div><div><h3>Urology</h3><p>Urinary tract and male reproductive health</p><b>12+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Pulmonology"><div class="dept-icon" style="background:#e7fbfc;color:#28b7bd"><i class="fa-solid fa-lungs"></i></div><div><h3>Pulmonology</h3><p>Lung and respiratory care</p><b>12+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Oncology"><div class="dept-icon" style="background:#ffeaf4;color:#f03d87"><i class="fa-solid fa-ribbon"></i></div><div><h3>Oncology</h3><p>Cancer diagnosis and treatment</p><b>20+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Psychiatry"><div class="dept-icon" style="background:#f1e9ff;color:#652de0"><i class="fa-solid fa-head-side-virus"></i></div><div><h3>Psychiatry</h3><p>Mental health and wellbeing</p><b>15+ Doctors</b></div></div>
+<div class="dept-card" data-dept="Nephrology"><div class="dept-icon" style="background:#eafaf1;color:#19a05d"><i class="fa-solid fa-kidneys"></i></div><div><h3>Nephrology</h3><p>Kidney and related disorders</p><b>10+ Doctors</b></div></div>
+</div><div class="actions-row"><button class="btn" onclick="location.href='patient-dashboard.html'"><i class="fa-solid fa-arrow-left"></i> Back</button><button class="btn primary-btn next-step">Continue to Select Doctor <i class="fa-solid fa-arrow-right"></i></button></div>
+</div>
+<div class="step-page" data-step="2">
+<h2 class="section-title">2. Select Doctor</h2><p class="section-sub">Choose your preferred doctor from the list below.</p>
+<div class="doctor-filters"><div class="select"><i class="fa-regular fa-hospital"></i><select id="doctorHospitalFilter"><option value="all">All Hospitals</option><option selected="">City Care Hospital, Delhi</option><option>Apollo Clinic, Delhi</option><option>Metro Heart Center</option></select><i class="fa-solid fa-chevron-down"></i></div><div class="select"><i class="fa-solid fa-heart-pulse"></i><select id="doctorDepartmentFilter"><option value="all">All Departments</option><option selected="">Cardiology</option><option>Dermatology</option><option>General Physician</option><option>Pediatrics</option></select><i class="fa-solid fa-chevron-down"></i></div><div class="input"><i class="fa-solid fa-magnifying-glass"></i><input id="doctorSearchInput" placeholder="Search doctor by name or expertise..."/></div><button class="filter-btn" id="doctorFilterToggle" type="button"><i class="fa-solid fa-filter"></i> Filter</button></div>
+<div aria-hidden="true" class="filter-panel" id="doctorFilterPanel">
+<div class="filter-panel-head"><h3><i class="fa-solid fa-sliders"></i> Filter Doctors</h3><button id="closeDoctorFilter" type="button"><i class="fa-solid fa-xmark"></i></button></div>
+<div class="filter-grid">
+<label class="filter-field">Rating
+                <select id="ratingFilter"><option value="all">Any Rating</option><option value="4.8">4.8 &amp; above</option><option value="4.6">4.6 &amp; above</option><option value="4.5">4.5 &amp; above</option></select>
+</label>
+<label class="filter-field">Experience
+                <select id="experienceFilter"><option value="all">Any Experience</option><option value="15">15+ Years</option><option value="12">12+ Years</option><option value="10">10+ Years</option><option value="7">7+ Years</option></select>
+</label>
+<label class="filter-field">Consultation Fee
+                <select id="feeFilter"><option value="all">Any Fee</option><option value="600">Below ₹600</option><option value="700">Below ₹700</option><option value="800">Below ₹800</option><option value="1000">Below ₹1000</option></select>
+</label>
+<label class="filter-field">Availability
+                <select id="availabilityFilter"><option value="all">Any Time</option><option value="today">Available Today</option><option value="tomorrow">Available Tomorrow</option><option value="weekend">Weekend Slots</option></select>
+</label>
+<label class="filter-check"><input id="topRatedOnly" type="checkbox"/> Top rated doctors only</label>
+<label class="filter-check"><input id="femaleDoctorOnly" type="checkbox"/> Female doctors only</label>
+</div>
+<div class="filter-actions"><button class="btn small-btn" id="resetDoctorFilter" type="button">Reset</button><button class="btn primary-btn small-primary" id="applyDoctorFilter" type="button">Apply Filters</button></div>
+</div>
+<div class="doctor-list">
+<div class="doctor-row selected" data-availability="today" data-department="Cardiology" data-doctor="Dr. Arvind Sharma" data-experience="15" data-fee="800" data-gender="male" data-hospital="City Care Hospital, Delhi" data-rating="4.8" data-top="true"><span class="radio-dot"></span><img src="assets/images/doctor-arvind.png"/><div class="doctor-info"><h3>Dr. Arvind Sharma <small style="background:#efe7ff;color:#5b2ed6;padding:3px 8px">Top Rated</small></h3><p>MBBS, MD (Cardiology), DM<br/>Senior Consultant Cardiologist</p><div class="doctor-meta"><span><i class="fa-solid fa-star rating"></i> 4.8 (1200+ reviews)</span><span><i class="fa-regular fa-calendar"></i> 15+ Years Experience</span></div></div><div class="fee">Consultation Fee<b>₹800</b><a href="#">View Profile <i class="fa-solid fa-chevron-right"></i></a></div></div>
+<div class="doctor-row" data-availability="tomorrow" data-department="Cardiology" data-doctor="Dr. Neha Kapoor" data-experience="10" data-fee="700" data-gender="female" data-hospital="City Care Hospital, Delhi" data-rating="4.7" data-top="false"><span class="radio-dot"></span><img src="assets/images/doctor-neha.png"/><div class="doctor-info"><h3>Dr. Neha Kapoor</h3><p>MBBS, MD (Cardiology)<br/>Consultant Cardiologist</p><div class="doctor-meta"><span><i class="fa-solid fa-star rating"></i> 4.7 (950+ reviews)</span><span><i class="fa-regular fa-calendar"></i> 10+ Years Experience</span></div></div><div class="fee">Consultation Fee<b>₹700</b><a href="#">View Profile <i class="fa-solid fa-chevron-right"></i></a></div></div>
+<div class="doctor-row" data-availability="today" data-department="Cardiology" data-doctor="Dr. Rohan Mehta" data-experience="12" data-fee="700" data-gender="male" data-hospital="Apollo Clinic, Delhi" data-rating="4.6" data-top="false"><span class="radio-dot"></span><img src="assets/images/doctor-rohan.png"/><div class="doctor-info"><h3>Dr. Rohan Mehta</h3><p>MBBS, MD (Cardiology), FACC<br/>Interventional Cardiologist</p><div class="doctor-meta"><span><i class="fa-solid fa-star rating"></i> 4.6 (800+ reviews)</span><span><i class="fa-regular fa-calendar"></i> 12+ Years Experience</span></div></div><div class="fee">Consultation Fee<b>₹700</b><a href="#">View Profile <i class="fa-solid fa-chevron-right"></i></a></div></div>
+<div class="doctor-row" data-availability="weekend" data-department="Cardiology" data-doctor="Dr. Pooja Iyer" data-experience="8" data-fee="600" data-gender="female" data-hospital="City Care Hospital, Delhi" data-rating="4.5" data-top="false"><span class="radio-dot"></span><img src="assets/images/doctor-pooja.png"/><div class="doctor-info"><h3>Dr. Pooja Iyer</h3><p>MBBS, MD (Cardiology)<br/>Cardiac Specialist</p><div class="doctor-meta"><span><i class="fa-solid fa-star rating"></i> 4.5 (650+ reviews)</span><span><i class="fa-regular fa-calendar"></i> 8+ Years Experience</span></div></div><div class="fee">Consultation Fee<b>₹600</b><a href="#">View Profile <i class="fa-solid fa-chevron-right"></i></a></div></div>
+<div class="doctor-row" data-availability="tomorrow" data-department="Cardiology" data-doctor="Dr. Amit Verma" data-experience="9" data-fee="700" data-gender="male" data-hospital="Metro Heart Center" data-rating="4.5" data-top="false"><span class="radio-dot"></span><img src="assets/images/doctor-amit.png"/><div class="doctor-info"><h3>Dr. Amit Verma</h3><p>MBBS, MD (Cardiology)<br/>Consultant Cardiologist</p><div class="doctor-meta"><span><i class="fa-solid fa-star rating"></i> 4.5 (600+ reviews)</span><span><i class="fa-regular fa-calendar"></i> 9+ Years Experience</span></div></div><div class="fee">Consultation Fee<b>₹700</b><a href="#">View Profile <i class="fa-solid fa-chevron-right"></i></a></div></div>
+<div class="doctor-row" data-availability="today" data-department="Cardiology" data-doctor="Dr. Shreya Joshi" data-experience="7" data-fee="650" data-gender="female" data-hospital="City Care Hospital, Delhi" data-rating="4.4" data-top="false"><span class="radio-dot"></span><img src="assets/images/doctor-shreya.png"/><div class="doctor-info"><h3>Dr. Shreya Joshi</h3><p>MBBS, MD (Cardiology)<br/>Consultant Cardiologist</p><div class="doctor-meta"><span><i class="fa-solid fa-star rating"></i> 4.4 (550+ reviews)</span><span><i class="fa-regular fa-calendar"></i> 7+ Years Experience</span></div></div><div class="fee">Consultation Fee<b>₹650</b><a href="#">View Profile <i class="fa-solid fa-chevron-right"></i></a></div></div>
+</div><div class="doctor-empty" hidden="" id="doctorEmptyState"><i class="fa-solid fa-user-doctor"></i><h3>No doctors found</h3><p>Try changing department, hospital, search keyword, or filter options.</p><button class="outline-btn" id="clearDoctorFilters" type="button">Clear Filters</button></div><div class="actions-row"><button class="btn prev-step"><i class="fa-solid fa-arrow-left"></i> Back</button><button class="btn primary-btn next-step">Next: Select Date &amp; Time <i class="fa-solid fa-arrow-right"></i></button></div>
+</div>
+<div class="step-page" data-step="3">
+<h2 class="section-title">3. Select Date &amp; Time</h2><p class="section-sub">Choose your preferred date and time slot.</p>
+<div class="doctor-mini card"><img src="assets/images/doctor-arvind.png"/><div><h3>Dr. Arvind Sharma <small style="background:#efe7ff;color:#5b2ed6;padding:3px 8px">Top Rated</small></h3><p>MBBS, MD (Cardiology), DM<br/>Senior Consultant Cardiologist</p><div class="doctor-meta"><span><i class="fa-solid fa-star rating"></i> 4.8 (1200+ reviews)</span><span><i class="fa-regular fa-calendar"></i> 15+ Years Experience</span></div></div><div class="mini-cell"><small><i class="fa-solid fa-heart-pulse"></i> Department</small><b>Cardiology</b></div><div class="mini-cell"><small><i class="fa-regular fa-hospital"></i> Hospital</small><b>City Care Hospital, Delhi</b></div><div class="mini-cell"><small>Consultation Fee</small><b style="font-size:22px;color:#551dd2">₹800</b></div></div>
+<div class="date-time-grid"><div class="calendar-card card"><h3>Select Date</h3><div class="cal-head"><button id="prevMonth"><i class="fa-solid fa-chevron-left"></i></button><div class="cal-title" id="calTitle">May 2025</div><button id="nextMonth"><i class="fa-solid fa-chevron-right"></i></button></div><div class="calendar-grid" id="calendarGrid"></div><div class="legend"><span><i style="background:#00a66b"></i>Available</span><span><i style="background:#ffb11e"></i>Few Slots</span><span><i style="background:#f02c69"></i>Unavailable</span></div></div>
+<div class="slots-card card"><div class="slots-head"><h3>Select Time</h3><span>All times are in IST</span></div><div class="slot-group"><h4>Morning</h4><div class="slot-grid"><button class="slot">09:00 AM</button><button class="slot">09:30 AM</button><button class="slot selected">10:00 AM</button><button class="slot">10:30 AM</button><button class="slot">11:00 AM</button><button class="slot">11:30 AM</button></div></div><div class="slot-group"><h4>Afternoon</h4><div class="slot-grid"><button class="slot">12:00 PM</button><button class="slot">12:30 PM</button><button class="slot">01:00 PM</button><button class="slot">01:30 PM</button><button class="slot">02:00 PM</button><button class="slot">02:30 PM</button><button class="slot">03:00 PM</button><button class="slot">03:30 PM</button><button class="slot">04:00 PM</button></div></div><div class="slot-group"><h4>Evening</h4><div class="slot-grid"><button class="slot">04:30 PM</button><button class="slot">05:00 PM</button><button class="slot">05:30 PM</button><button class="slot">06:00 PM</button><button class="slot">06:30 PM</button><button class="slot">07:00 PM</button><button class="slot">07:30 PM</button></div></div><div class="selected-slot"><i class="fa-regular fa-calendar-days" style="font-size:28px;color:#5b2ed6"></i><div><b>Selected Slot</b><br/><span class="selected-slot-text">15 May 2025, 10:00 AM</span></div><a>Change</a></div></div></div>
+<div class="actions-row"><button class="btn prev-step"><i class="fa-solid fa-arrow-left"></i> Back</button><button class="btn primary-btn next-step">Next: Patient Details <i class="fa-solid fa-arrow-right"></i></button></div>
+</div>
+<div class="step-page" data-step="4">
+<h2 class="section-title">4. Patient Details</h2><p class="section-sub">Please provide patient information for the appointment.</p><div class="patient-login-strip">Have an account? <b>Login to autofill your details and make booking faster.</b><button class="outline-btn">Login / Sign Up</button></div>
+<div class="form-card card"><h3>Patient Information</h3><div class="form-grid"><div><label>Full Name *</label><input class="text-input" placeholder="Enter full name"/></div><div><label>Gender *</label><div class="radio-group custom-radio-group"><label class="form-radio"><input checked="" name="gender" type="radio"/><span></span> Male</label><label class="form-radio"><input name="gender" type="radio"/><span></span> Female</label><label class="form-radio"><input name="gender" type="radio"/><span></span> Other</label></div></div><div><label>Date of Birth *</label><div class="date-field"><input aria-label="Date of Birth" class="text-input js-dob-input" placeholder="DD / MM / YYYY" readonly="" type="text"/><i class="fa-regular fa-calendar-days"></i></div></div><div><label>Mobile Number *</label><input class="text-input" placeholder="Enter mobile number"/></div><div><label>Email ID</label><input class="text-input" placeholder="Enter email ID (optional)"/></div><div><label>Blood Group</label><select class="text-input">
+<option>Select blood group</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+</select></div><div class="wide"><label>Address *</label><input class="text-input" placeholder="House No., Building, Street, Area"/></div><div><label>City *</label><input class="text-input" placeholder="Enter city"/></div><div><label>State *</label><select class="text-input">
+<option>Select state</option><option>Kerala</option><option>Tamil Nadu</option><option>Karnataka</option><option>Telangana</option><option>Andhra Pradesh</option><option>Delhi</option><option>Maharashtra</option>
+</select></div><div><label>Pincode *</label><input class="text-input" placeholder="Enter pincode"/></div></div><hr style="border:0;border-top:1px solid #e6e8f3;margin:22px 0"/><h3>Emergency Contact</h3><div class="form-grid"><div><label>Contact Person Name *</label><input class="text-input" placeholder="Enter contact person name"/></div><div><label>Relationship *</label><select class="text-input">
+<option>Select relationship</option><option>Father</option><option>Mother</option><option>Spouse</option><option>Brother</option><option>Sister</option><option>Friend</option><option>Guardian</option>
+</select></div><div><label>Mobile Number *</label><input class="text-input" placeholder="Enter mobile number"/></div></div></div><div class="secure-note"><i class="fa-solid fa-shield-halved"></i><div><b>Your information is safe with us</b><br/>We use industry-standard encryption to protect your personal data.</div></div>
+<div class="actions-row"><button class="btn prev-step"><i class="fa-solid fa-arrow-left"></i> Back</button><button class="btn primary-btn next-step">Next: Payment <i class="fa-solid fa-arrow-right"></i></button></div>
+</div>
+<div class="step-page" data-step="5">
+<h2 class="section-title">5. Payment</h2><p class="section-sub">Choose a payment method and complete your transaction.</p>
+<div class="doctor-mini card"><img src="assets/images/doctor-arvind.png"/><div><h3>Dr. Arvind Sharma <small style="background:#efe7ff;color:#5b2ed6;padding:3px 8px">Top Rated</small></h3><p>MBBS, MD (Cardiology), DM<br/>Senior Consultant Cardiologist</p></div><div class="mini-cell"><small>Department</small><b>Cardiology</b></div><div class="mini-cell"><small>Date &amp; Time</small><b>15 May 2025, 10:00 AM</b></div><div class="mini-cell"><small>Hospital</small><b>City Care Hospital, Delhi</b></div></div>
+<div class="card payment-layout"><div><h3>Select Payment Method</h3><div class="pay-options"><div class="pay-option active" data-pay="upi"><span class="radio-dot"></span><div class="pay-logo pay-logo-img"><img alt="UPI" src="assets/images/payment/upi.svg"/></div><div><b>UPI</b><p>Pay using any UPI app</p></div></div><div class="pay-option" data-pay="card"><span class="radio-dot"></span><div class="pay-logo pay-logo-img"><img alt="Visa Mastercard Rupay" src="assets/images/payment/visa-card.svg"/></div><div><b>Credit / Debit Card</b><p>Pay using saved or new card</p></div></div><div class="pay-option" data-pay="bank"><span class="radio-dot"></span><div class="pay-logo"><i class="fa-solid fa-building-columns"></i></div><div><b>Net Banking</b><p>Pay using your bank account</p></div></div><div class="pay-option" data-pay="wallet"><span class="radio-dot"></span><div class="pay-logo pay-logo-img"><img alt="Paytm" src="assets/images/payment/paytm.svg"/></div><div><b>Wallets</b><p>PhonePe, Paytm, Amazon Pay</p></div></div><div class="pay-option" data-pay="later"><span class="radio-dot"></span><div class="pay-logo pay-logo-img"><img alt="Pay Later" src="assets/images/payment/lazypay.svg"/></div><div><b>Pay Later</b><p>Pay later or in installments</p></div></div></div></div>
+<div class="pay-panel"><div class="pay-content" id="pay-upi"><h3>Pay using UPI</h3><p>Scan the QR code using any UPI app</p><div class="qr"><div class="qr-box"><i class="fa-solid fa-qrcode"></i><img alt="Google Pay" class="gpay-center" src="assets/images/payment/gpay.svg"/></div></div><div class="divider">OR</div><label>Enter UPI ID</label><input class="text-input" placeholder="name@upi"/><div class="payment-safe"><i class="fa-solid fa-shield-halved"></i><b>Secure &amp; Encrypted Payments</b><br/>Your payment details are safe with us.</div></div><div class="pay-content" hidden="" id="pay-card"><h3>Pay using Credit / Debit Card</h3><p>Enter your card details securely.</p><div class="card-fields"><div class="full"><label>Card Number *</label><input class="text-input" value="1234 5678 9012 3456"/></div><div><label>Card Holder Name *</label><input class="text-input" placeholder="Enter card holder name"/></div><div><label>Expiry Date *</label><input class="text-input" placeholder="MM / YY"/></div><div><label>CVV *</label><input class="text-input" placeholder="123"/></div></div><label class="saved-check"><input checked="" type="checkbox"/> Save this card for faster payments</label><div class="payment-safe"><i class="fa-solid fa-lock"></i><b>Secure Payments</b><br/>Your card details are encrypted and secure.</div></div><div class="pay-content" hidden="" id="pay-bank"><h3>Pay using Net Banking</h3><p>Select your bank and you will be redirected to your bank's secure website.</p><div class="input"><input placeholder="Search your bank..."/><i class="fa-solid fa-magnifying-glass"></i></div><h4>Popular Banks</h4><div class="bank-grid"><div class="bank"><i class="fa-solid fa-building-columns"></i>SBI</div><div class="bank"><i class="fa-solid fa-building-columns"></i>HDFC Bank</div><div class="bank"><i class="fa-solid fa-building-columns"></i>ICICI Bank</div><div class="bank"><i class="fa-solid fa-building-columns"></i>Axis Bank</div><div class="bank"><i class="fa-solid fa-building-columns"></i>PNB</div><div class="bank"><i class="fa-solid fa-building-columns"></i>Canara Bank</div></div></div><div class="pay-content" hidden="" id="pay-wallet"><h3>Pay using Wallet</h3><p>Choose your wallet app to complete payment.</p><div class="bank-grid"><div class="bank">Paytm</div><div class="bank">PhonePe</div><div class="bank">Amazon Pay</div></div></div><div class="pay-content" hidden="" id="pay-later"><h3>Pay Later</h3><p>Choose a pay later provider.</p><div class="bank-grid"><div class="bank">LazyPay</div><div class="bank">Simpl</div></div></div></div></div>
+<div class="order-summary card"><h3>Order Summary</h3><div class="summary-row"><span>Consultation Fee</span><b>₹800</b></div><div class="summary-row"><span>Convenience Fee</span><b>₹20</b></div><div class="summary-row total"><span>Total Amount</span><b>₹820</b></div></div><div class="actions-row"><button class="btn prev-step"><i class="fa-solid fa-arrow-left"></i> Back</button><button class="btn primary-btn next-step">Next: Confirm Booking <i class="fa-solid fa-arrow-right"></i></button></div>
+</div>
+<div class="step-page" data-step="6">
+<div class="confirm-hero"><div class="check"><i class="fa-solid fa-check"></i></div><h2>Appointment Confirmed!</h2><p>Your appointment has been successfully booked.</p><small>Booking ID</small><div class="booking-id">OPT12505151024 <button id="copyBooking" style="border:0;background:transparent;color:#551dd2"><i class="fa-regular fa-copy"></i></button></div><p>A confirmation message has been sent to your mobile number and email.</p></div>
+<div class="final-summary card"><h3>Appointment Summary</h3><div class="summary-grid"><div class="summary-item"><i class="fa-solid fa-user-doctor"></i><div><h4>Doctor</h4><p><b>Dr. Arvind Sharma</b><br/>MBBS, MD (Cardiology), DM<br/>Senior Consultant Cardiologist</p></div></div><div class="summary-item"><i class="fa-solid fa-heart-pulse"></i><div><h4>Department</h4><p>Cardiology</p></div></div><div class="summary-item"><i class="fa-regular fa-user"></i><div><h4>Patient</h4><p>Priya Sharma<br/>Female, 28 Years</p></div></div><div class="summary-item"><i class="fa-regular fa-calendar"></i><div><h4>Date &amp; Time</h4><p>15 May 2025, Thursday<br/>10:00 AM</p></div></div><div class="summary-item"><i class="fa-regular fa-hospital"></i><div><h4>Hospital</h4><p>City Care Hospital, Delhi<br/>B-18, Sector 62, Noida</p></div></div><div class="summary-item"><i class="fa-solid fa-heart-pulse"></i><div><h4>Consultation Fee</h4><p>₹800</p></div></div></div></div>
+<div class="instructions card"><h3><i class="fa-regular fa-circle-info"></i> Important Instructions</h3><ul><li>Please arrive 15 minutes prior to your appointment time.</li><li>Bring a valid photo ID proof and previous medical reports.</li><li>Appointment once booked cannot be rescheduled within 2 hours of the slot.</li></ul></div><div class="actions-row"><button class="btn" onclick="location.href='patient-dashboard.html'"><i class="fa-solid fa-arrow-left"></i> Back to Home</button><button class="btn primary-btn">Go to My Appointments <i class="fa-solid fa-arrow-right"></i></button></div>
+</div>
+</section>
+<aside class="right-col"><div class="side-card"><h3>Appointment Summary <a style="float:right;font-size:13px;color:#551dd2">Edit</a></h3><div class="summary-line"><i class="fa-regular fa-hospital"></i><div><h4>Hospital</h4><p class="summary-hospital">City Care Hospital, Delhi</p></div></div><div class="summary-line"><i class="fa-solid fa-heart-pulse"></i><div><h4>Department</h4><p class="summary-department">Cardiology</p></div></div><div class="summary-line"><i class="fa-regular fa-user"></i><div><h4>Doctor</h4><p class="summary-doctor">Not Selected</p></div></div><div class="summary-line"><i class="fa-regular fa-calendar-days"></i><div><h4>Date &amp; Time</h4><p class="summary-date">Not Selected</p></div></div><div class="side-fee"><span>Consultation Fee</span><b class="summary-fee">₹800</b></div></div>
+<div class="side-card why-card"><h3>Why Book with OP Ticket?</h3><div class="why-item"><i class="fa-regular fa-calendar-plus"></i><div><h4>Quick &amp; Easy Booking</h4><p>Book appointments in just a few clicks</p></div></div><div class="why-item"><i class="fa-solid fa-user-doctor"></i><div><h4>Verified Doctors</h4><p>Consult with experienced and trusted doctors</p></div></div><div class="why-item"><i class="fa-solid fa-shield-halved"></i><div><h4>Secure &amp; Safe</h4><p>Your data is protected with 100% security</p></div></div><div class="why-item"><i class="fa-solid fa-headset"></i><div><h4>24/7 Support</h4><p>We're here to help you anytime</p></div></div></div>
+<div class="side-card tele-card"><h4>Can't find a suitable option?</h4><p>Try booking a teleconsultation or choose another available option.</p><button class="outline-btn"><i class="fa-solid fa-video"></i> Explore Teleconsultation</button></div>
+</aside>
+</div>
+</main>
+</div>
+<script src="assets/js/booking.js"></script>
+<script src="assets/js/ui-fixes.js"></script><script src="assets/js/common-fix.js"></script></body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patient Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="assets/css/dashboard.css" rel="stylesheet">
+</link></link><link rel="stylesheet" href="assets/css/common-fix.css"></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+<div class="brand">
+<div class="brand-mark">
+<svg viewbox="0 0 48 48"><path d="M34.5 7.8c-2.1-2.3-5.1-3.7-8.5-3.7-5.6 0-10.3 4-11.3 9.3-5.7.9-10 5.8-10 11.8 0 6.6 5.4 12 12 12h1.1v-6.2h-1.1c-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8h3.9v-3.8c0-3.1 2.4-5.5 5.5-5.5 1.9 0 3.6 1 4.6 2.5l1.2 1.9 2-1c.8-.4 1.6-.6 2.5-.6 3.2 0 5.7 2.6 5.7 5.7 0 2.8-2 5.1-4.6 5.6v6.3c6.1-.6 10.8-5.7 10.8-11.9 0-6.6-5.3-12-12-12-.6 0-1.2.1-1.8.2z"></path><path d="M22 20.5h17.2v20.9H22z" opacity=".2"></path><path d="M25 23.5h11.2v14.9H25z"></path><path d="M29.4 26.9l5.3 3.8-5.3 3.8v-7.6z" fill="#fff"></path></svg>
+</div>
+<div><div class="brand-text"><span>OP</span>ticket</div><small>Book Smart. Visit Easy.</small></div>
+</div>
+<button class="mobile-close" id="closeSidebar">×</button>
+<nav class="menu">
+<a class="menu-item active" href="#"><i class="ico fa-solid fa-house"></i><span>Dashboard</span></a>
+<a class="menu-item" href="my-appointments.html"><i class="ico fa-regular fa-calendar-check"></i><span>My Appointments</span></a>
+<a class="menu-item" href="my-tokens.html"><i class="ico fa-solid fa-ticket"></i><span>My Tokens</span></a>
+<a class="menu-item" href="medical-records.html"><i class="ico fa-regular fa-file-lines"></i><span>Medical Records</span></a>
+<a class="menu-item" href="prescriptions.html"><i class="ico fa-solid fa-prescription"></i><span>Prescriptions</span></a>
+<a class="menu-item" href="lab-reports.html"><i class="ico fa-solid fa-flask"></i><span>Lab Reports</span></a>
+<a class="menu-item" href="#payments"><i class="ico fa-regular fa-credit-card"></i><span>Payments &amp; Bills</span></a>
+<a class="menu-item" href="my-profile.html"><i class="ico fa-regular fa-user"></i><span>My Profile</span></a>
+<a class="menu-item" href="my-family.html"><i class="ico fa-solid fa-user-group"></i><span>My Family</span></a>
+<a class="menu-item" href="#notifications"><i class="ico fa-regular fa-bell"></i><span>Notifications</span></a>
+<a class="menu-item" href="raise-ticket.html"><i class="ico fa-regular fa-circle-question"></i><span>Help &amp; Support</span></a>
+<a class="menu-item" href="#settings"><i class="ico fa-solid fa-gear"></i><span>Settings</span></a>
+<a class="menu-item" href="index.html"><i class="ico fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+</nav>
+
+</aside>
+<main class="main">
+<header class="topbar">
+<button aria-label="Open menu" class="hamburger" id="openSidebar"><i class="fa-solid fa-bars"></i></button>
+<div class="greeting"><h1>Good Morning, <span>Priya Sharma</span> <em>👋</em></h1><p>Here’s what's happening with your health today.</p></div>
+<div class="top-actions">
+<button class="book-btn" onclick="location.href='book-appointment.html'" type="button"><i class="fa-regular fa-calendar-plus"></i> Book Appointment</button>
+<div class="notif" id="notifBtn"><i class="bell fa-regular fa-bell"></i><b>3</b>
+<div class="dropdown notif-menu" id="notifMenu"><h4>Notifications</h4><p>Appointment confirmed at 10:30 AM</p><p>Lab report is ready to view</p><p>Payment reminder pending</p></div>
+</div>
+<div class="profile" id="profileBtn"><img alt="Priya Sharma" class="avatar" src="assets/images/profile-priya.png"/><span>Priya Sharma</span><i class="fa-solid fa-chevron-down profile-chevron"></i>
+<div class="dropdown profile-menu" id="profileMenu"><a href="my-profile.html">My Profile</a><a href="my-family.html">Family Members</a><a>Settings</a><a href="index.html">Logout</a></div>
+</div>
+</div>
+</header>
+<section class="content">
+<div class="stats-grid">
+<article class="stat-card"><div class="stat-icon purple"><i class="fa-regular fa-calendar-plus"></i></div><div><p>Upcoming<br/>Appointments</p><h2>2</h2><a class="view-link" href="#appointments">View all <i class="fa-solid fa-chevron-right"></i></a></div></article>
+<article class="stat-card"><div class="stat-icon pink"><i class="fa-solid fa-ticket"></i></div><div><p>Active<br/>Tokens</p><h2>1</h2><a class="view-link" href="my-tokens.html">View token <i class="fa-solid fa-chevron-right"></i></a></div></article>
+<article class="stat-card"><div class="stat-icon blue"><i class="fa-solid fa-prescription"></i></div><div><p>Prescriptions</p><h2>3</h2><a class="view-link" href="prescriptions.html">View all <i class="fa-solid fa-chevron-right"></i></a></div></article>
+<article class="stat-card"><div class="stat-icon green"><i class="fa-solid fa-flask"></i></div><div><p>Lab Reports</p><h2>2</h2><a class="view-link" href="lab-reports.html">View all <i class="fa-solid fa-chevron-right"></i></a></div></article>
+<article class="stat-card"><div class="stat-icon orange"><i class="fa-solid fa-file-invoice-dollar"></i></div><div><p>Total Spent</p><h2>₹ 12,850</h2><a class="view-link" href="#payments">View bills <i class="fa-solid fa-chevron-right"></i></a></div></article>
+</div>
+<div class="two-col">
+<section class="panel appointments" id="appointments"><div class="panel-head"><h3>Upcoming Appointments</h3><a class="view-link" href="#appointments">View All <i class="fa-solid fa-chevron-right"></i></a></div>
+<div class="appt-item"><div class="datebox"><small>MAY</small><b>24</b><small>SAT</small></div><img alt="Dr. Arvind Sharma" class="doctor-img" src="assets/images/doctor-arvind.png"/><div class="appt-info"><h4>Dr. Arvind Sharma</h4><p>Cardiologist</p><p>City Care Hospital, Delhi</p><span class="time-pill"><i class="fa-regular fa-clock"></i>10:30 AM - 11:00 AM</span></div><span class="badge">Confirmed</span><button aria-label="View appointment" class="arrow" type="button"><i class="fa-solid fa-chevron-right"></i></button></div>
+<div class="appt-item"><div class="datebox"><small>MAY</small><b>28</b><small>WED</small></div><img alt="Dr. Neha Kapoor" class="doctor-img" src="assets/images/doctor-neha.png"/><div class="appt-info"><h4>Dr. Neha Kapoor</h4><p>Dermatologist</p><p>City Care Hospital, Delhi</p><span class="time-pill"><i class="fa-regular fa-clock"></i>04:00 PM - 04:30 PM</span></div><span class="badge">Confirmed</span><button aria-label="View appointment" class="arrow" type="button"><i class="fa-solid fa-chevron-right"></i></button></div>
+</section>
+<section class="panel prescriptions" id="prescriptions"><div class="panel-head"><h3>Recent Prescriptions</h3><a class="view-link" href="prescriptions.html">View All <i class="fa-solid fa-chevron-right"></i></a></div>
+<div class="rx-row"><div class="rx-icon"><i class="fa-solid fa-prescription"></i></div><div><h4>Dr. Arvind Sharma</h4><p>Cardiologist</p><small>20 May 2025</small></div><button><i class="fa-regular fa-eye"></i> View</button><button class="square"><i class="fa-solid fa-download"></i></button></div>
+<div class="rx-row"><div class="rx-icon"><i class="fa-solid fa-prescription"></i></div><div><h4>Dr. Neha Kapoor</h4><p>Dermatologist</p><small>10 May 2025</small></div><button><i class="fa-regular fa-eye"></i> View</button><button class="square"><i class="fa-solid fa-download"></i></button></div>
+<div class="rx-row"><div class="rx-icon"><i class="fa-solid fa-prescription"></i></div><div><h4>Dr. Rohan Mehta</h4><p>General Physician</p><small>02 May 2025</small></div><button><i class="fa-regular fa-eye"></i> View</button><button class="square"><i class="fa-solid fa-download"></i></button></div>
+<a class="panel-footer view-link" href="prescriptions.html">View All Prescriptions <i class="fa-solid fa-chevron-right"></i></a>
+</section>
+</div>
+<div class="two-col lower">
+<section class="panel token" id="tokens"><div class="panel-head"><h3>Current Token Status</h3><a class="view-link" href="my-tokens.html">View All <i class="fa-solid fa-chevron-right"></i></a></div>
+<div class="token-card"><div><p>Your Token Number</p><h2>A24</h2><span>Consultation</span></div><div><p>Department</p><h4>Cardiology (OP)</h4><p>Dr. Arvind Sharma</p></div><div><p>Estimated Time</p><h3>25 mins</h3><small>12 people ahead of you</small></div></div>
+<div class="steps"><div class="done"><b><i class="fa-solid fa-check"></i></b><span>Token<br/>Booked</span></div><i></i><div><b><i class="fa-regular fa-clock"></i></b><span>In<br/>Queue</span></div><i></i><div><b><i class="fa-solid fa-user-doctor"></i></b><span>Consultation<br/>In Progress</span></div><i></i><div><b><i class="fa-solid fa-check"></i></b><span>Completed</span></div></div>
+</section>
+<section class="panel quick"><div class="panel-head"><h3>Quick Actions</h3></div>
+<div class="quick-grid">
+<button class="js-open-calendar" type="button"><b><i class="fa-regular fa-calendar-plus"></i></b><span>Book<br/>Appointment</span></button><button><b><i class="fa-solid fa-flask"></i></b><span>Book<br/>Lab Test</span></button><button><b><i class="fa-regular fa-folder-open"></i></b><span>View<br/>Medical Records</span></button><button><b><i class="fa-regular fa-credit-card"></i></b><span>Pay<br/>Online</span></button>
+<button><b><i class="fa-solid fa-download"></i></b><span>Download<br/>Reports</span></button><button><b><i class="fa-solid fa-user-plus"></i></b><span>Add Family<br/>Member</span></button><button><b><i class="fa-regular fa-heart"></i></b><span>Health<br/>Tips</span></button><button><b><i class="fa-solid fa-headset"></i></b><span>Customer<br/>Support</span></button>
+</div>
+</section>
+</div>
+<section class="refer-banner"><div class="star"><i class="fa-regular fa-star"></i></div><div><h4>Refer &amp; Earn Benefits!</h4><p>Refer your family and friends and earn exciting rewards.</p></div><button>Refer Now <i class="fa-solid fa-chevron-right"></i></button><div class="confetti"><i class="fa-solid fa-diamond"></i></div><div class="gift"><div></div></div></section>
+</section>
+</main>
+</div>
+<div aria-hidden="true" class="calendar-modal" id="calendarModal">
+<div aria-labelledby="calendarTitle" aria-modal="true" class="calendar-dialog" role="dialog">
+<div class="calendar-head">
+<div>
+<h3 id="calendarTitle">Book Appointment</h3>
+<p>Select appointment date</p>
+</div>
+<button aria-label="Close calendar" class="calendar-close" id="calendarClose" type="button"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div class="calendar-toolbar">
+<button aria-label="Previous month" id="prevMonth" type="button"><i class="fa-solid fa-chevron-left"></i></button>
+<strong id="calendarMonthLabel">May 2025</strong>
+<button aria-label="Next month" id="nextMonth" type="button"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+<div class="calendar-weekdays">
+<span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+</div>
+<div class="calendar-grid" id="calendarGrid"></div>
+<div class="calendar-actions">
+<button class="cancel-calendar" id="cancelCalendar" type="button">Cancel</button>
+<button class="confirm-calendar" id="confirmCalendar" type="button">Confirm Date</button>
+</div>
+</div>
+</div>
+<div class="overlay" id="overlay"></div>
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/ui-fixes.js"></script><script src="assets/js/common-fix.js"></script></body>
+</html>

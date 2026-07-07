@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Tokens | OP Ticket</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="assets/css/dashboard.css" rel="stylesheet">
+<link href="assets/css/tokens.css" rel="stylesheet">
+</link></link></link><link rel="stylesheet" href="assets/css/common-fix.css"></head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+<div class="brand">
+<div class="brand-mark">
+<svg viewbox="0 0 48 48"><path d="M34.5 7.8c-2.1-2.3-5.1-3.7-8.5-3.7-5.6 0-10.3 4-11.3 9.3-5.7.9-10 5.8-10 11.8 0 6.6 5.4 12 12 12h1.1v-6.2h-1.1c-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8h3.9v-3.8c0-3.1 2.4-5.5 5.5-5.5 1.9 0 3.6 1 4.6 2.5l1.2 1.9 2-1c.8-.4 1.6-.6 2.5-.6 3.2 0 5.7 2.6 5.7 5.7 0 2.8-2 5.1-4.6 5.6v6.3c6.1-.6 10.8-5.7 10.8-11.9 0-6.6-5.3-12-12-12-.6 0-1.2.1-1.8.2z"></path><path d="M22 20.5h17.2v20.9H22z" opacity=".2"></path><path d="M25 23.5h11.2v14.9H25z"></path><path d="M29.4 26.9l5.3 3.8-5.3 3.8v-7.6z" fill="#fff"></path></svg>
+</div>
+<div><div class="brand-text"><span>OP</span>ticket</div><small>Book Smart. Visit Easy.</small></div>
+</div>
+<button class="mobile-close" id="closeSidebar">×</button>
+<nav class="menu">
+<a class="menu-item" href="patient-dashboard.html"><i class="ico fa-solid fa-house"></i><span>Dashboard</span></a>
+<a class="menu-item" href="my-appointments.html"><i class="ico fa-regular fa-calendar-check"></i><span>My Appointments</span></a>
+<a class="menu-item active" href="my-tokens.html"><i class="ico fa-solid fa-ticket"></i><span>My Tokens</span></a>
+<a class="menu-item" href="medical-records.html"><i class="ico fa-regular fa-file-lines"></i><span>Medical Records</span></a>
+<a class="menu-item" href="prescriptions.html"><i class="ico fa-solid fa-prescription"></i><span>Prescriptions</span></a>
+<a class="menu-item" href="lab-reports.html"><i class="ico fa-solid fa-flask"></i><span>Lab Reports</span></a>
+<a class="menu-item" href="#payments"><i class="ico fa-regular fa-credit-card"></i><span>Payments &amp; Bills</span></a>
+<a class="menu-item" href="my-profile.html"><i class="ico fa-regular fa-user"></i><span>My Profile</span></a>
+<a class="menu-item" href="my-family.html"><i class="ico fa-solid fa-user-group"></i><span>My Family</span></a>
+<a class="menu-item" href="#notifications"><i class="ico fa-regular fa-bell"></i><span>Notifications</span><b class="notif-dot">3</b></a>
+<a class="menu-item" href="raise-ticket.html"><i class="ico fa-regular fa-circle-question"></i><span>Help &amp; Support</span></a>
+<a class="menu-item" href="#settings"><i class="ico fa-solid fa-gear"></i><span>Settings</span></a>
+<a class="menu-item" href="index.html"><i class="ico fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+</nav>
+
+</aside>
+<main class="main">
+<header class="topbar">
+<button aria-label="Open menu" class="hamburger" id="openSidebar"><i class="fa-solid fa-bars"></i></button>
+<div class="page-title"><h1>My Tokens</h1><p>View and track your OP tokens &amp; queue status</p></div>
+<div class="top-actions">
+<div class="help-inline"><i class="fa-regular fa-circle-question"></i><span>Need Help?</span></div>
+<div class="notif" id="notifBtn"><i class="bell fa-regular fa-bell"></i><b>5</b><div class="dropdown notif-menu" id="notifMenu"><h4>Notifications</h4><p>Your token turn is near</p><p>Consultation reminder at 10:30 AM</p></div></div>
+<div class="profile" id="profileBtn"><img alt="Priya Sharma" class="avatar" src="assets/images/profile-priya.png"/><span>Priya Sharma</span><i class="fa-solid fa-chevron-down profile-chevron"></i><div class="dropdown profile-menu" id="profileMenu"><a href="my-profile.html">My Profile</a><a href="my-family.html">Family Members</a><a>Settings</a><a href="index.html">Logout</a></div></div>
+</div>
+</header>
+<section class="tokens-page">
+<div class="tokens-layout">
+<div class="tokens-left">
+<div class="token-stats">
+<article class="token-stat purple"><span><i class="fa-regular fa-clipboard"></i></span><div><b>Total Tokens</b><strong>8</strong><p>All time tokens</p></div></article>
+<article class="token-stat green"><span><i class="fa-regular fa-calendar-check"></i></span><div><b>Used Tokens</b><strong>6</strong><p>Completed visits</p></div></article>
+<article class="token-stat orange"><span><i class="fa-regular fa-clock"></i></span><div><b>Active Token</b><strong>1</strong><p>Currently valid</p></div></article>
+<article class="token-stat pink"><span><i class="fa-regular fa-circle-xmark"></i></span><div><b>Cancelled Tokens</b><strong>1</strong><p>Cancelled visits</p></div></article>
+</div>
+<div class="token-filters">
+<label class="filter-control"><i class="fa-solid fa-magnifying-glass"></i><input id="searchTokens" placeholder="Search by hospital or department..."/></label>
+<div class="date-filter" id="dateFilter"><i class="fa-regular fa-calendar-days"></i><span class="date-text">Select Date Range</span><i class="fa-solid fa-rotate-right small-action"></i>
+<div class="custom-date-pop"><div class="cal-head"><button id="prevDate"><i class="fa-solid fa-chevron-left"></i></button><b id="dateLabel">May 2025</b><button id="nextDate"><i class="fa-solid fa-chevron-right"></i></button></div><div class="cal-grid" id="dateGrid"></div><div class="cal-foot"><button id="clearDate">Clear</button><button id="todayDate">Today</button></div></div>
+</div>
+<div class="custom-select" id="statusSelect"><i class="fa-solid fa-filter select-icon"></i><span class="select-label">All Tokens</span><i class="chev fa-solid fa-chevron-down"></i><div class="select-menu"><button class="active">All Tokens</button><button>Active</button><button>Completed</button><button>Cancelled</button><button>Expired</button></div></div>
+<button class="filter-btn"><i class="fa-solid fa-filter"></i> Filters</button>
+</div>
+<div class="token-table-card">
+<div class="token-table">
+<div class="token-head"><div>Token Details</div><div>Hospital &amp; Department</div><div>Date &amp; Time</div><div>Status</div><div>Action</div></div>
+<div id="tokenRows"></div>
+</div>
+<div id="mobileTokenRows"></div>
+<div class="table-footer"><span id="resultCount">Showing 1 to 5 of 8 tokens</span><div class="pages"><button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button><button class="page-btn active">1</button><button class="page-btn">2</button><button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button></div></div>
+</div>
+</div>
+<aside class="tokens-right">
+<div class="current-token-card">
+<h3>Current Token</h3>
+<div class="current-box">
+<div class="tag-row"><span>Your Token Number</span><b>Active</b></div>
+<strong>#TK12345</strong>
+<h4>Cardiology (OP)</h4><p>City Care Hospital</p>
+<small>Date &amp; Time</small><p><i class="fa-regular fa-calendar-days"></i> 20 May 2025, 10:30 AM</p>
+<div class="turn-box"><span>Estimated Your Turn</span><b>12 - 15 mins</b><p>Please stay near the OPD area.</p></div>
+</div>
+</div>
+<div class="guide-card"><h3>Token Guide</h3><div class="guide-step"><b>1</b><i class="fa-solid fa-ticket"></i><div><strong>Get your token at the hospital</strong><p>Reception or kiosk.</p></div></div><div class="guide-step"><b>2</b><i class="fa-regular fa-clock"></i><div><strong>Wait for your turn</strong><p>We'll notify you when it's near.</p></div></div><div class="guide-step"><b>3</b><i class="fa-solid fa-user-doctor"></i><div><strong>Visit the doctor</strong><p>Please keep your token handy.</p></div></div><div class="guide-step"><b>4</b><i class="fa-regular fa-circle-check"></i><div><strong>Complete your consultation</strong><p>Thank you!</p></div></div></div>
+<div class="need-card"><div><h3>Need help with your token?</h3><p>Contact our support team we're here to help you.</p></div><i class="fa-solid fa-headset"></i></div>
+</aside>
+</div>
+</section>
+</main>
+</div>
+<div class="overlay" id="overlay"></div>
+<div class="token-drawer" id="tokenDrawer"><div class="drawer-panel"><button class="drawer-close" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button><div id="drawerContent"></div></div></div>
+<script src="assets/js/tokens.js"></script>
+<script src="assets/js/ui-fixes.js"></script><script src="assets/js/common-fix.js"></script></body>
+</html>
