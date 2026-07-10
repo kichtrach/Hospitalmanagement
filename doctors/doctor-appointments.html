@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Doctor Appointments | MediCare+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/component.css">
+  <link rel="stylesheet" href="../assets/css/dropdown.css">
+  <link rel="stylesheet" href="../assets/css/doctor.css">
+</head>
+<body class="doctor-page doctor-appointments-page">
+  <div class="doctor-shell">
+    <aside class="doctor-sidebar" id="doctorSidebar">
+      <div class="doctor-brand"><img src="../assets/images/medicare-doctor-logo.png" alt="MediCare+ Hospital Management System"></div>
+      <nav class="doctor-nav">
+        <a class="doctor-nav-link" href="doctors-dashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+        <div class="doctor-nav-group open">
+          <button class="doctor-nav-link nav-toggle active" type="button"><i class="fa-regular fa-calendar-days"></i><span>Appointments</span><i class="fa-solid fa-angle-up caret"></i></button>
+          <div class="doctor-subnav">
+            <a class="active" href="doctor-appointments.html">Today's Appointments</a>
+            <a href="#">Upcoming Appointments</a>
+            <a href="#">Completed</a>
+            <a href="#">Cancelled</a>
+            <a href="#">Follow Up Appointments</a>
+          </div>
+        </div>
+        <a class="doctor-nav-link" href="#patients"><i class="fa-solid fa-user-group"></i><span>Patients</span></a>
+        <a class="doctor-nav-link" href="#consultations"><i class="fa-regular fa-pen-to-square"></i><span>Consultations</span></a>
+        <a class="doctor-nav-link" href="#prescriptions"><i class="fa-solid fa-file-pen"></i><span>Prescriptions</span></a>
+        <a class="doctor-nav-link" href="#lab"><i class="fa-solid fa-flask"></i><span>Lab Orders</span></a>
+        <a class="doctor-nav-link" href="#followups"><i class="fa-regular fa-circle-check"></i><span>Follow Ups</span></a>
+        <a class="doctor-nav-link" href="#reports"><i class="fa-regular fa-file-lines"></i><span>Reports</span></a>
+        <a class="doctor-nav-link" href="#calendar"><i class="fa-regular fa-calendar-days"></i><span>Calendar</span><b>3</b></a>
+        <a class="doctor-nav-link" href="#messages"><i class="fa-regular fa-comment"></i><span>Messages</span><b>3</b></a>
+        <a class="doctor-nav-link" href="#profile"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+        <a class="doctor-nav-link" href="#settings"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a class="doctor-nav-link" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+      <div class="doctor-app-card"><div class="phone-mock"><i class="fa-solid fa-mobile-screen-button"></i></div><div><h4>MediCare+ Mobile App</h4><p>Manage your consultations on the go. Download now!</p><div class="store-row"><span><i class="fa-brands fa-google-play"></i> Google Play</span><span><i class="fa-brands fa-apple"></i> App Store</span></div></div></div>
+    </aside>
+    <main class="doctor-main">
+      <header class="doctor-topbar">
+        <button class="doctor-menu" type="button" id="doctorMenu"><i class="fa-solid fa-bars"></i></button>
+        <div class="doctor-title"><h1>Good Morning, Dr. Priya Sharma 👋</h1><p>Here's what's happening in your clinic today.</p></div>
+        <div class="doctor-time"><i class="fa-regular fa-clock"></i><div><strong>10:45 AM</strong><span>24 May 2025, Saturday</span></div></div>
+        <button class="doctor-alert" type="button"><i class="fa-regular fa-bell"></i><b>3</b></button>
+        <div class="doctor-profile"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80" alt="Dr Priya"><div><strong>Dr. Priya Sharma</strong><span>Cardiologist</span></div><i class="fa-solid fa-chevron-down"></i></div>
+      </header>
+      <section class="doctor-content">
+        <div class="doc-page-title"><h2><i class="fa-regular fa-calendar-days"></i>Today's Appointments</h2><p>Manage and view all your appointments for today.</p></div>
+        <section class="doctor-card doc-appointments-list-card">
+          <div class="doc-appointment-toolbar">
+            <div class="doctor-tabs doc-filter-tabs" data-doctor-tabs>
+              <button class="active" data-filter="all"><i class="fa-regular fa-calendar-days"></i> All (24)</button>
+              <button data-filter="confirmed"><i class="fa-regular fa-circle-check"></i> Confirmed (18)</button>
+              <button data-filter="waiting"><i class="fa-regular fa-clock"></i> Waiting (6)</button>
+              <button data-filter="consultation"><i class="fa-solid fa-user-doctor"></i> In Consultation (2)</button>
+              <button data-filter="cancelled"><i class="fa-regular fa-circle-xmark"></i> Cancelled (2)</button>
+            </div>
+            <div class="doc-filters">
+              <button class="doctor-filter-btn"><i class="fa-solid fa-filter"></i> Filter</button>
+              <label class="doctor-date-control"><i class="fa-regular fa-calendar-days"></i><input type="date" value="2025-05-24"><span>24 May 2025</span><i class="fa-solid fa-angle-down"></i></label>
+              <label class="doctor-search"><input type="search" placeholder="Search patient or token..."><i class="fa-solid fa-magnifying-glass"></i></label>
+            </div>
+          </div>
+          <div class="doctor-table-wrap">
+            <table class="doctor-table doctor-appt-table" id="doctorAppointmentsTable">
+              <thead><tr><th>Time</th><th>Patient Details</th><th>Age / Gender</th><th>Token No.</th><th>Purpose</th><th>Status</th><th>Payment</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr data-status="consultation"><td><span class="time-pill">09:30<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=80&q=80"><div><strong>Arun Kumar</strong><span>+91 98765 43210</span></div></div></td><td>32 Yrs, Male</td><td><b class="token">A24</b></td><td>Chest Pain</td><td><span class="status in-consultation">In Consultation</span></td><td><span class="pay paid">Paid</span></td><td class="row-actions"><button class="mini view-appointment"><i class="fa-regular fa-eye"></i></button><button class="mini"><i class="fa-regular fa-pen-to-square"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                <tr data-status="waiting"><td><span class="time-pill">10:00<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=80&q=80"><div><strong>Neha Kapoor</strong><span>+91 98765 43211</span></div></div></td><td>28 Yrs, Female</td><td><b class="token">A25</b></td><td>Breathlessness</td><td><span class="status waiting">Waiting</span></td><td><span class="pay paid">Paid</span></td><td class="row-actions"><button class="mini view-appointment"><i class="fa-regular fa-eye"></i></button><button class="mini"><i class="fa-regular fa-pen-to-square"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                <tr data-status="waiting"><td><span class="time-pill">10:30<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=80&q=80"><div><strong>Ramesh Patel</strong><span>+91 98765 43212</span></div></div></td><td>45 Yrs, Male</td><td><b class="token">A26</b></td><td>Regular Checkup</td><td><span class="status waiting">Waiting</span></td><td><span class="pay pending">Pending</span></td><td class="row-actions"><button class="mini view-appointment"><i class="fa-regular fa-eye"></i></button><button class="mini"><i class="fa-regular fa-pen-to-square"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                <tr data-status="confirmed"><td><span class="time-pill">11:00<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=80&q=80"><div><strong>Priya Nair</strong><span>+91 98765 43213</span></div></div></td><td>36 Yrs, Female</td><td><b class="token">A27</b></td><td>Heart Palpitations</td><td><span class="status confirmed">Confirmed</span></td><td><span class="pay paid">Paid</span></td><td class="row-actions"><button class="mini view-appointment"><i class="fa-regular fa-eye"></i></button><button class="mini"><i class="fa-regular fa-pen-to-square"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                <tr data-status="confirmed"><td><span class="time-pill">11:30<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=80&q=80"><div><strong>Suresh Verma</strong><span>+91 98765 43214</span></div></div></td><td>50 Yrs, Male</td><td><b class="token">A28</b></td><td>BP Check</td><td><span class="status confirmed">Confirmed</span></td><td><span class="pay paid">Paid</span></td><td class="row-actions"><button class="mini view-appointment"><i class="fa-regular fa-eye"></i></button><button class="mini"><i class="fa-regular fa-pen-to-square"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                <tr data-status="confirmed"><td><span class="time-pill">12:00<br>PM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=80&q=80"><div><strong>Anita Desai</strong><span>+91 98765 43215</span></div></div></td><td>40 Yrs, Female</td><td><b class="token">A29</b></td><td>Chest Pain</td><td><span class="status confirmed">Confirmed</span></td><td><span class="pay paid">Paid</span></td><td class="row-actions"><button class="mini view-appointment"><i class="fa-regular fa-eye"></i></button><button class="mini"><i class="fa-regular fa-pen-to-square"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                <tr data-status="confirmed"><td><span class="time-pill">12:30<br>PM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=80&q=80"><div><strong>Vikram Singh</strong><span>+91 98765 43216</span></div></div></td><td>38 Yrs, Male</td><td><b class="token">A30</b></td><td>Follow Up</td><td><span class="status confirmed">Confirmed</span></td><td><span class="pay paid">Paid</span></td><td class="row-actions"><button class="mini view-appointment"><i class="fa-regular fa-eye"></i></button><button class="mini"><i class="fa-regular fa-pen-to-square"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                <tr data-status="waiting"><td><span class="time-pill">01:00<br>PM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=80&q=80"><div><strong>Kavya Iyer</strong><span>+91 98765 43217</span></div></div></td><td>31 Yrs, Female</td><td><b class="token">A31</b></td><td>Consultation</td><td><span class="status waiting">Waiting</span></td><td><span class="pay pending">Pending</span></td><td class="row-actions"><button class="mini view-appointment"><i class="fa-regular fa-eye"></i></button><button class="mini"><i class="fa-regular fa-pen-to-square"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-foot"><span>Showing 1 to 8 of 24 appointments</span><div class="pager"><button><i class="fa-solid fa-angle-left"></i></button><button class="active">1</button><button>2</button><button>3</button><span>...</span><button>5</button><button><i class="fa-solid fa-angle-right"></i></button></div><label class="rows-select">Rows per page:<select><option>10</option><option>25</option></select></label></div>
+        </section>
+      </section>
+    </main>
+    <aside class="appointment-detail-drawer" id="appointmentDrawer" aria-hidden="true">
+      <div class="drawer-head"><h2>Appointment Details</h2><button type="button" class="drawer-close"><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="drawer-patient"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&q=80"><div><h3>Arun Kumar</h3><p>32 Yrs, Male <span>|</span> +91 98765 43210</p></div><b>A24</b></div>
+      <div class="drawer-meta"><p><i class="fa-regular fa-calendar-days"></i><strong>24 May 2025</strong><span>Saturday</span></p><p><i class="fa-regular fa-clock"></i><strong>09:30 AM</strong><span>30 mins</span></p><p><i class="fa-solid fa-stethoscope"></i><strong>Chest Pain</strong><span>Consultation</span></p></div>
+      <div class="drawer-status-grid"><div><h4>Status</h4><span class="status in-consultation">In Consultation</span></div><div><h4>Payment Status</h4><span class="pay paid">Paid</span><strong>₹ 500.00</strong></div></div>
+      <section><h3>Patient Information</h3><dl><div><dt>Date of Birth</dt><dd>24 Aug 1992</dd></div><div><dt>Address</dt><dd>24, Green Park Street<br>Bangalore, Karnataka - 560001</dd></div><div><dt>Gender</dt><dd>Male</dd></div><div><dt>Occupation</dt><dd>Software Engineer</dd></div><div><dt>Blood Group</dt><dd>B+</dd></div><div><dt>Marital Status</dt><dd>Married</dd></div><div><dt>Phone</dt><dd>+91 98765 43210</dd></div><div><dt>Emergency Contact</dt><dd>+91 98765 43211<br>(Neha Kapoor)</dd></div><div><dt>Email</dt><dd>arun.kumar@email.com</dd></div></dl></section>
+      <section><h3>Consultation Information</h3><dl><div><dt>Department</dt><dd>Cardiology</dd></div><div><dt>Purpose</dt><dd>Chest Pain</dd></div><div><dt>Doctor</dt><dd>Dr. Priya Sharma</dd></div><div><dt>Duration</dt><dd>30 mins</dd></div><div><dt>Consultation Type</dt><dd>OP Consultation</dd></div></dl></section>
+      <section><h3>Notes</h3><p class="drawer-note">Patient experiencing chest pain since 2 days with mild discomfort.<br>No previous heart issues.</p></section>
+      <div class="drawer-actions"><button><i class="fa-regular fa-pen-to-square"></i>Edit Appointment</button><button><i class="fa-regular fa-calendar-days"></i>Reschedule</button><a class="primary" href="doctor-consultation.html" data-start-consultation><i class="fa-solid fa-stethoscope"></i>Start Consultation</a></div>
+    </aside>
+  </div>
+  <script src="../assets/js/component.js"></script>
+  <script src="../assets/js/doctor.js"></script>
+</body>
+</html>

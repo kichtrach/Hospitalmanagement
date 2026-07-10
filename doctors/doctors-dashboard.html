@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Doctor Dashboard | MediCare+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/component.css">
+  <link rel="stylesheet" href="../assets/css/dropdown.css">
+  <link rel="stylesheet" href="../assets/css/doctor.css">
+</head>
+<body class="doctor-page">
+  <div class="doctor-shell">
+    <aside class="doctor-sidebar" id="doctorSidebar">
+      <div class="doctor-brand">
+        <img src="../assets/images/medicare-doctor-logo.png" alt="MediCare+ Hospital Management System">
+      </div>
+      <nav class="doctor-nav">
+        <a class="doctor-nav-link active" href="doctors-dashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+        <div class="doctor-nav-group">
+          <button class="doctor-nav-link nav-toggle" type="button"><i class="fa-solid fa-calendar-days"></i><span>Appointments</span><i class="fa-solid fa-angle-up caret"></i></button>
+          <div class="doctor-subnav">
+            <a href="doctor-appointments.html">Today's Appointments</a>
+            <a href="doctor-appointments.html#upcoming">Upcoming Appointments</a>
+            <a href="doctor-appointments.html#completed">Completed</a>
+            <a href="doctor-appointments.html#cancelled">Cancelled</a>
+          </div>
+        </div>
+        <a class="doctor-nav-link" href="#patients"><i class="fa-solid fa-user-group"></i><span>Patients</span></a>
+        <a class="doctor-nav-link" href="#consultations"><i class="fa-regular fa-pen-to-square"></i><span>Consultations</span></a>
+        <a class="doctor-nav-link" href="#prescriptions"><i class="fa-solid fa-file-pen"></i><span>Prescriptions</span></a>
+        <a class="doctor-nav-link" href="#lab"><i class="fa-solid fa-flask"></i><span>Lab Orders</span></a>
+        <a class="doctor-nav-link" href="#followups"><i class="fa-solid fa-circle-check"></i><span>Follow Ups</span></a>
+        <a class="doctor-nav-link" href="#reports"><i class="fa-solid fa-chart-column"></i><span>Reports</span></a>
+        <a class="doctor-nav-link" href="#calendar"><i class="fa-solid fa-calendar-plus"></i><span>Calendar</span><b>3</b></a>
+        <a class="doctor-nav-link" href="#messages"><i class="fa-solid fa-comment"></i><span>Messages</span></a>
+        <a class="doctor-nav-link" href="#profile"><i class="fa-regular fa-user"></i><span>Profile</span></a>
+        <a class="doctor-nav-link" href="#settings"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a class="doctor-nav-link" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+      <div class="doctor-app-card">
+        <div class="phone-mock"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <div>
+          <h4>MediCare+ Mobile App</h4>
+          <p>Manage your consultations on the go. Download now!</p>
+          <div class="store-row"><span><i class="fa-brands fa-google-play"></i> Google Play</span><span><i class="fa-brands fa-apple"></i> App Store</span></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="doctor-main">
+      <header class="doctor-topbar">
+        <button class="doctor-menu" type="button" id="doctorMenu"><i class="fa-solid fa-bars"></i></button>
+        <div class="doctor-title">
+          <h1>Good Morning, Dr. Priya Sharma 👋</h1>
+          <p>Here's what's happening in your clinic today.</p>
+        </div>
+        <div class="doctor-time"><i class="fa-solid fa-clock"></i><div><strong>10:45 AM</strong><span>24 May 2025, Saturday</span></div></div>
+        <button class="doctor-alert" type="button"><i class="fa-solid fa-bell"></i><b>3</b></button>
+        <div class="doctor-profile"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=120&q=80" alt="Dr Priya"><div><strong>Dr. Priya Sharma</strong><span>Cardiologist</span></div><i class="fa-solid fa-chevron-down"></i></div>
+      </header>
+
+      <section class="doctor-content">
+        <section class="doctor-kpis">
+          <article class="doctor-kpi purple"><div class="kpi-i"><i class="fa-solid fa-calendar-plus"></i></div><div><h3>24</h3><p>Today's Appointments</p><a href="#appointments">View all <i class="fa-solid fa-angle-right"></i></a></div></article>
+          <article class="doctor-kpi green"><div class="kpi-i"><i class="fa-solid fa-circle-check"></i></div><div><h3>18</h3><p>Completed</p><a href="#completed">View all <i class="fa-solid fa-angle-right"></i></a></div></article>
+          <article class="doctor-kpi orange"><div class="kpi-i"><i class="fa-solid fa-clock"></i></div><div><h3>6</h3><p>Pending</p><a href="#pending">View all <i class="fa-solid fa-angle-right"></i></a></div></article>
+          <article class="doctor-kpi pink"><div class="kpi-i"><i class="fa-solid fa-circle-xmark"></i></div><div><h3>2</h3><p>Cancelled</p><a href="#cancelled">View all <i class="fa-solid fa-angle-right"></i></a></div></article>
+          <article class="doctor-kpi blue"><div class="kpi-i"><i class="fa-solid fa-user-group"></i></div><div><h3>156</h3><p>Total Patients</p><a href="#patients">View all <i class="fa-solid fa-angle-right"></i></a></div></article>
+        </section>
+
+        <div class="doctor-grid-main">
+          <section class="doctor-card appointments-card" id="appointments">
+            <div class="card-head"><h2><i class="fa-solid fa-calendar-plus"></i> Today's Appointments</h2><a href="#">View All</a></div>
+            <div class="doctor-tabs" data-doctor-tabs>
+              <button class="active" data-filter="all">All (24)</button><button data-filter="confirmed">Confirmed (18)</button><button data-filter="pending">Pending (6)</button><button data-filter="cancelled">Cancelled (2)</button>
+            </div>
+            <div class="doctor-table-wrap">
+              <table class="doctor-table" id="doctorAppointmentsTable">
+                <thead><tr><th>Time</th><th>Patient</th><th>Age / Gender</th><th>Token No.</th><th>Type</th><th>Status</th><th>Action</th></tr></thead>
+                <tbody>
+                  <tr data-status="confirmed"><td><span class="time-pill">09:30<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=80&q=80"><div><strong>Arun Kumar</strong><span>Chest Pain</span></div></div></td><td>32 Yrs, Male</td><td><b class="token">A24</b></td><td><span class="type new">New</span></td><td><span class="status checked">Checked In</span></td><td><button class="mini"><i class="fa-solid fa-eye"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                  <tr data-status="pending"><td><span class="time-pill">10:00<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=80&q=80"><div><strong>Neha Kapoor</strong><span>Breathlessness</span></div></div></td><td>28 Yrs, Female</td><td><b class="token">A25</b></td><td><span class="type follow">Follow Up</span></td><td><span class="status waiting">Waiting</span></td><td><button class="mini"><i class="fa-solid fa-eye"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                  <tr data-status="pending"><td><span class="time-pill">10:30<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=80&q=80"><div><strong>Ramesh Patel</strong><span>Regular Checkup</span></div></div></td><td>45 Yrs, Male</td><td><b class="token">A26</b></td><td><span class="type new">New</span></td><td><span class="status waiting">Waiting</span></td><td><button class="mini"><i class="fa-solid fa-eye"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                  <tr data-status="pending"><td><span class="time-pill">11:00<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=80&q=80"><div><strong>Priya Nair</strong><span>Heart Palpitations</span></div></div></td><td>36 Yrs, Female</td><td><b class="token">A27</b></td><td><span class="type follow">Follow Up</span></td><td><span class="status pending">Pending</span></td><td><button class="mini"><i class="fa-solid fa-eye"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                  <tr data-status="pending"><td><span class="time-pill">11:30<br>AM</span></td><td><div class="patient-cell"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=80&q=80"><div><strong>Suresh Verma</strong><span>BP Check</span></div></div></td><td>50 Yrs, Male</td><td><b class="token">A28</b></td><td><span class="type new">New</span></td><td><span class="status pending">Pending</span></td><td><button class="mini"><i class="fa-solid fa-eye"></i></button><button class="mini menu-dot"><i class="fa-solid fa-ellipsis-vertical"></i></button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-foot"><span>Showing 1 to 5 of 24 appointments</span><div class="pager"><button><i class="fa-solid fa-angle-left"></i></button><button class="active">1</button><button>2</button><button>3</button><span>...</span><button>5</button><button><i class="fa-solid fa-angle-right"></i></button></div></div>
+          </section>
+
+          <aside class="doctor-right">
+            <section class="doctor-card schedule-card"><div class="card-head"><h2>Today's Schedule</h2><button class="link-btn" type="button" id="viewCalendarBtn">View Calendar</button></div><div class="mini-calendar"><div class="cal-head"><i class="fa-solid fa-angle-left"></i><strong>May 2025</strong><i class="fa-solid fa-angle-right"></i></div><div class="cal-grid"><b>Sun</b><b>Mon</b><b>Tue</b><b>Wed</b><b>Thu</b><b>Fri</b><b>Sat</b><span class="muted">27</span><span class="muted">28</span><span class="muted">29</span><span class="muted">30</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span class="today">24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div></div></section>
+            <section class="doctor-card overview-card"><h2>Today's Overview</h2><div class="overview-list"><p><i class="fa-solid fa-clock"></i>First Appointment <b>09:30 AM</b></p><p><i class="fa-solid fa-clock"></i>Last Appointment <b>06:30 PM</b></p><p><i class="fa-solid fa-clock"></i>Average Consultation Time <b>20 mins</b></p><p><i class="fa-solid fa-calendar-days"></i>Break Time <b>01:30 PM - 02:00 PM</b></p></div></section>
+          </aside>
+        </div>
+
+        <div class="doctor-bottom-grid">
+          <section class="doctor-card recent-card"><div class="card-head"><h2>Recent Consultations</h2><a href="#">View All</a></div><div class="consult-list"><p><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=80&q=80"><span><strong>Arun Kumar</strong><small>Chest Pain</small></span><em>Today, 09:30 AM</em><i class="fa-solid fa-angle-right"></i></p><p><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=80&q=80"><span><strong>Neha Kapoor</strong><small>Breathlessness</small></span><em>Today, 10:00 AM</em><i class="fa-solid fa-angle-right"></i></p><p><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=80&q=80"><span><strong>Ramesh Patel</strong><small>Regular Checkup</small></span><em>Today, 10:30 AM</em><i class="fa-solid fa-angle-right"></i></p></div></section>
+          <section class="doctor-card tasks-card"><div class="card-head"><h2>Pending Tasks</h2><a href="#">View All</a></div><label><input type="checkbox"> <span><strong>Lab Reports to Review</strong><small>5 reports pending</small></span><b>5</b></label><label><input type="checkbox"> <span><strong>Pending Follow Ups</strong><small>3 patients</small></span><b class="orange">3</b></label><label><input type="checkbox"> <span><strong>Prescriptions to Complete</strong><small>2 prescriptions pending</small></span><b class="pink">2</b></label><label><input type="checkbox" checked> <span><strong>Unread Messages</strong><small>3 new messages</small></span><b class="green">3</b></label></section>
+          <section class="doctor-card quick-card"><h2>Quick Actions</h2><div class="doctor-quick-grid"><button><i class="fa-solid fa-calendar-plus"></i>New Consultation</button><button><i class="fa-solid fa-prescription"></i>New Prescription</button><button><i class="fa-solid fa-flask"></i>Lab Test</button><button><i class="fa-solid fa-user-plus"></i>Add Patient</button><button><i class="fa-solid fa-file-lines"></i>View Reports</button><button><i class="fa-solid fa-calendar-days"></i>Calendar</button><button><i class="fa-solid fa-comments"></i>Messages <b>3</b></button><button><i class="fa-solid fa-headset"></i>Help & Support</button></div></section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="doctor-modal" id="doctorCalendarModal" aria-hidden="true">
+    <div class="doctor-modal-backdrop" data-close-calendar></div>
+    <section class="doctor-calendar-modal-card" role="dialog" aria-modal="true" aria-label="Doctor calendar">
+      <div class="modal-head"><h2><i class="fa-regular fa-calendar-days"></i> Doctor Calendar</h2><button type="button" data-close-calendar><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="mini-calendar modal-calendar"><div class="cal-head"><button type="button" class="cal-nav"><i class="fa-solid fa-angle-left"></i></button><strong>May 2025</strong><button type="button" class="cal-nav"><i class="fa-solid fa-angle-right"></i></button></div><div class="cal-grid"><b>Sun</b><b>Mon</b><b>Tue</b><b>Wed</b><b>Thu</b><b>Fri</b><b>Sat</b><span class="muted">27</span><span class="muted">28</span><span class="muted">29</span><span class="muted">30</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span class="today">24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div></div>
+    </section>
+  </div>
+  <script src="../assets/js/component.js"></script>
+  <script src="../assets/js/doctor.js"></script>
+</body>
+</html>
