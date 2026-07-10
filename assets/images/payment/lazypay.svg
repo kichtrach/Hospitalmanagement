@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 64" role="img" aria-label="Pay Later">
-  <rect width="180" height="64" rx="6" fill="#FFF4EA"/>
-  <path d="M19 14v36l30-18z" fill="#EF3340"/>
-  <path d="M43 14v36l30-18z" fill="#FF6B35" opacity=".9"/>
-  <text x="82" y="38" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="900" fill="#F36F21">PayLater</text>
-</svg>

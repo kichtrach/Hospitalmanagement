@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 64" role="img" aria-label="Paytm PhonePe Amazon Pay">
-  <rect width="180" height="64" rx="6" fill="#ECF9FF"/>
-  <circle cx="27" cy="32" r="15" fill="#5D35D8"/>
-  <text x="50" y="38" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900" fill="#00BAF2">pay</text>
-  <text x="96" y="38" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900" fill="#002970">tm</text>
-  <text x="135" y="37" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="800" fill="#FF9900">Pay</text>
-</svg>

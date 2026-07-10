@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pharmacy Dashboard | OPD HMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/component.css">
+  <link rel="stylesheet" href="../assets/css/dropdown.css">
+  <link rel="stylesheet" href="../assets/css/pharmacy.css?v=13">
+</head>
+<body class="pharmacy-page">
+<div class="app pharmacy-app">
+  <aside class="sidebar pharmacy-sidebar">
+    <a class="ph-brand" href="pharmacy-dashboard.html" aria-label="MediCare Hospital Management System">
+      <img class="ph-brand-logo" src="../assets/images/medicare-logo-white-wide.png" alt="MediCare Hospital Management System">
+    </a>
+
+    <nav class="ph-nav" aria-label="Pharmacy navigation">
+      <a class="nav-link active" href="pharmacy-dashboard.html"><i class="fa-solid fa-house-medical"></i><span>Dashboard</span></a>
+      <a class="nav-link" href="ip-patient-orders.html"><i class="fa-solid fa-bed-pulse"></i><span>IP Pharmacy</span></a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-user-doctor"></i><span>OP Pharmacy</span></a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-clipboard"></i><span>Prescriptions</span></a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-cubes-stacked"></i><span>Dispense Queue</span></a>
+      <button class="nav-link nav-toggle" type="button" data-submenu="stockMenu"><i class="fa-solid fa-boxes-stacked"></i><span>Stock Management</span><i class="fa-solid fa-angle-down nav-arrow"></i></button>
+      <div class="nav-submenu" id="stockMenu"><a href="#">Current Stock</a><a href="#">Stock Adjustment</a><a href="#">Batch Tracking</a></div>
+      <button class="nav-link nav-toggle" type="button" data-submenu="purchaseMenu"><i class="fa-solid fa-cart-plus"></i><span>Purchase & Orders</span><i class="fa-solid fa-angle-down nav-arrow"></i></button>
+      <div class="nav-submenu" id="purchaseMenu"><a href="#">Purchase Orders</a><a href="#">Suppliers</a><a href="#">Goods Receipt</a></div>
+      <button class="nav-link nav-toggle" type="button" data-submenu="returnMenu"><i class="fa-solid fa-box-archive"></i><span>Returns</span><i class="fa-solid fa-angle-down nav-arrow"></i></button>
+      <div class="nav-submenu" id="returnMenu"><a href="#">Patient Returns</a><a href="#">Supplier Returns</a></div>
+      <a class="nav-link" href="#"><i class="fa-solid fa-calendar-xmark"></i><span>Expiry Management</span></a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-pills"></i><span>Drug Interactions</span></a>
+      <button class="nav-link nav-toggle" type="button" data-submenu="reportMenu"><i class="fa-solid fa-chart-column"></i><span>Reports & Analytics</span><i class="fa-solid fa-angle-down nav-arrow"></i></button>
+      <div class="nav-submenu" id="reportMenu"><a href="#">Dispensing Report</a><a href="#">Stock Report</a><a href="#">Purchase Report</a></div>
+      <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      <div class="nav-divider"><span>OTHER</span></div>
+      <a class="nav-link" href="#"><i class="fa-solid fa-bell"></i><span>Notifications</span></a>
+      <a class="nav-link" href="#"><i class="fa-solid fa-circle-question"></i><span>Help & Support</span></a>
+      <a class="nav-link logout-nav" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+    </nav>
+  </aside>
+
+  <main class="main pharmacy-main">
+    <header class="topbar pharmacy-topbar">
+      <button class="hamb" type="button" aria-label="Toggle menu"><i class="fa-solid fa-list"></i></button>
+      <h1>Pharmacy Dashboard</h1>
+      <label class="search pharmacy-search"><i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Search medicines, patients, invoices..."></label>
+      <div class="top-icons">
+        <button class="icon-btn notification-btn" type="button"><i class="fa-solid fa-bell"></i><span class="badge">5</span></button>
+        <button class="icon-btn mail-btn" type="button"><i class="fa-solid fa-envelope"></i><span class="badge">3</span></button>
+      </div>
+      <div class="user pharmacy-user" tabindex="0">
+        <span class="avatar avatar-initial">RK</span>
+        <div><strong>Dr. Rajesh Kumar</strong><span>Pharmacist</span></div>
+        <i class="fa-solid fa-angle-down"></i>
+      </div>
+    </header>
+
+    <section class="ph-content">
+      <div class="welcome-strip">
+        <div><h2>Welcome, Dr. Rajesh Kumar</h2><p>Manage pharmacy operations efficiently</p></div>
+        <div class="welcome-meta">
+          <div class="date-control dashboard-calendar-field" data-dashboard-calendar>
+            <i class="fa-solid fa-calendar-days"></i>
+            <span id="dashboardDateText"></span>
+            <i class="fa-solid fa-chevron-down date-chevron"></i>
+            <div class="calendar-panel dashboard-calendar-panel">
+              <div class="cal-head"><button type="button" data-dash-prev><i class="fa-solid fa-chevron-left"></i></button><strong data-dash-cal-title></strong><button type="button" data-dash-next><i class="fa-solid fa-chevron-right"></i></button></div>
+              <div class="cal-week"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+              <div class="cal-days" data-dash-cal-days></div>
+              <div class="cal-foot"><button type="button" data-dash-today>Today</button><button type="button" data-dash-close>Close</button></div>
+            </div>
+          </div>
+          <button id="dashboardClock" class="live-clock" type="button" aria-label="Current time"><i class="fa-solid fa-clock"></i><span id="dashboardTimeText"></span></button>
+        </div>
+      </div>
+
+      <section class="overview-row">
+        <div class="pharmacy-switcher">
+          <article class="switch-card"><span class="switch-icon"><i class="fa-solid fa-bed-pulse"></i></span><div><h3>IP Pharmacy</h3><p>Manage inpatient pharmacy operations, medications and dispensing.</p><a class="ip-btn primary" href="ip-patient-orders.html">Go to IP Pharmacy <i class="fa-solid fa-arrow-right"></i></a></div></article>
+          <article class="switch-card"><span class="switch-icon"><i class="fa-solid fa-user"></i></span><div><h3>OP Pharmacy</h3><p>Manage outpatient prescriptions, medications and dispensing.</p><button type="button">Go to OP Pharmacy <i class="fa-solid fa-arrow-right"></i></button></div></article>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card"><span>Today's Prescriptions</span><div><strong>245</strong><i class="fa-solid fa-clipboard metric-red"></i></div><small class="positive"><i class="fa-solid fa-arrow-up"></i> 12% <em>vs yesterday</em></small></article>
+          <article class="metric-card"><span>Dispensed Today</span><div><strong>198</strong><i class="fa-solid fa-bag-shopping metric-green"></i></div><small class="positive"><i class="fa-solid fa-arrow-up"></i> 10% <em>vs yesterday</em></small></article>
+          <article class="metric-card"><span>Pending Orders</span><div><strong>23</strong><i class="fa-solid fa-list-check metric-orange"></i></div><a href="#">View all orders</a></article>
+          <article class="metric-card"><span>Low Stock Items</span><div><strong>18</strong><i class="fa-solid fa-triangle-exclamation metric-pink"></i></div><a href="#">View low stock</a></article>
+        </div>
+      </section>
+
+      <section class="dashboard-grid top-panels">
+        <article class="panel status-panel"><h3>Prescription Status</h3><div class="status-body"><div class="donut-chart"><div class="donut-center"><strong>245</strong><span>Total</span></div></div><div class="status-legend"><div><span class="legend-dot dispensed"></span><b>Dispensed</b><strong>198 (80.82%)</strong></div><div><span class="legend-dot pending"></span><b>Pending</b><strong>23 (9.39%)</strong></div><div><span class="legend-dot partial"></span><b>Partial</b><strong>14 (5.71%)</strong></div><div><span class="legend-dot cancelled"></span><b>Cancelled</b><strong>10 (4.08%)</strong></div></div></div><a class="panel-link" href="#">View all prescriptions <i class="fa-solid fa-arrow-right"></i></a></article>
+        <article class="panel table-panel"><div class="panel-heading"><h3>Top 5 Dispensed Medicines</h3><a href="#">View all</a></div><table><thead><tr><th>Medicine</th><th>Dispensed</th><th>Unit</th></tr></thead><tbody><tr><td>Paracetamol 500mg</td><td>320</td><td>Tablet</td></tr><tr><td>Amoxicillin 500mg</td><td>215</td><td>Capsule</td></tr><tr><td>Pantoprazole 40mg</td><td>180</td><td>Tablet</td></tr><tr><td>Azithromycin 500mg</td><td>150</td><td>Tablet</td></tr><tr><td>Metformin 500mg</td><td>120</td><td>Tablet</td></tr></tbody></table></article>
+        <article class="panel table-panel expiry-panel"><div class="panel-heading"><h3>Expiring Soon</h3><a href="#">View all</a></div><table><thead><tr><th>Medicine</th><th>Expiry Date</th><th>Stock</th></tr></thead><tbody><tr><td>Ceftriaxone 1gm</td><td>31 May 2025</td><td>45</td></tr><tr><td>Diclofenac 50mg</td><td>05 Jun 2025</td><td>32</td></tr><tr><td>Omeprazole 20mg</td><td>10 Jun 2025</td><td>28</td></tr><tr><td>Paracetamol 650mg</td><td>15 Jun 2025</td><td>60</td></tr><tr><td>Amoxicillin 250mg</td><td>20 Jun 2025</td><td>37</td></tr></tbody></table></article>
+      </section>
+
+      <section class="dashboard-grid bottom-panels">
+        <article class="panel chart-panel"><div class="panel-heading"><div><h3>Monthly Dispensed vs Prescriptions</h3><div class="chart-legend"><span><i class="prescription-key"></i>Prescriptions</span><span><i class="dispensed-key"></i>Dispensed</span></div></div><select aria-label="Chart period"><option>This Year</option><option>Last Year</option></select></div><canvas id="monthlyChart" height="245"></canvas></article>
+        <article class="panel activity-panel"><div class="panel-heading"><h3>Recent Activity</h3><a href="#">View all</a></div><div class="activity-list"><div class="activity"><i class="fa-solid fa-cart-shopping green"></i><div><b>Prescription #RX12345 dispensed</b><span>Patient: John Doe</span></div><time>10:15 AM</time></div><div class="activity"><i class="fa-solid fa-clipboard red"></i><div><b>New purchase order #PO5587 created</b><span>Supplier: MedPlus Pharmacy</span></div><time>09:45 AM</time></div><div class="activity"><i class="fa-solid fa-cube orange"></i><div><b>Stock updated: Paracetamol 500mg</b><span>Quantity: 500 tablets added</span></div><time>09:30 AM</time></div><div class="activity"><i class="fa-solid fa-triangle-exclamation pink"></i><div><b>Low stock alert: Azithromycin 500mg</b><span>Current stock: 15 tablets</span></div><time>09:10 AM</time></div></div></article>
+      </section>
+    </section>
+
+    <footer class="ph-footer"><span>© 2025 OPD HMS. All rights reserved.</span><span>Version 1.0.0</span></footer>
+  </main>
+</div>
+<script src="../assets/js/component.js"></script>
+<script src="../assets/js/pharmacy.js"></script>
+</body>
+</html>
