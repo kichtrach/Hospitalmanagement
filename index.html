@@ -1,1 +1,80 @@
-<!doctype html><html><head><meta http-equiv="refresh" content="0; url=admin/admindashboard.html"><title>OPD HMS</title></head><body></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | MediCare+ HMS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/login.css?v=20260710-bg">
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-visual">
+      <div class="login-brand">
+        <img src="assets/images/medicare-logo-purple.png" alt="MediCare+">
+        <div><div class="brand-word">MediCare+</div><div class="brand-sub">Hospital Management System</div></div>
+      </div>
+      <div class="welcome-copy">
+        <h1>Welcome Back!</h1>
+        <p>Sign in to continue to your<br>Hospital Management System</p>
+      </div>
+      <div class="benefits">
+        <div class="benefit"><div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div><div><h3>Secure & Protected</h3><p>Your data is 100% secure<br>with advanced encryption</p></div></div>
+        <div class="benefit"><div class="benefit-icon"><i class="fa-solid fa-users"></i></div><div><h3>Role Based Access</h3><p>Secure login for different<br>user roles and permissions</p></div></div>
+        <div class="benefit"><div class="benefit-icon"><i class="fa-solid fa-chart-line"></i></div><div><h3>Smart & Efficient</h3><p>Manage hospital operations<br>efficiently in one place</p></div></div>
+        <div class="benefit"><div class="benefit-icon"><i class="fa-solid fa-headset"></i></div><div><h3>24/7 Support</h3><p>We are here to help you<br>anytime, anywhere</p></div></div>
+      </div>
+      <div class="help-card">
+        <div class="help-icon"><i class="fa-solid fa-headset"></i></div>
+        <div><b>Need Help?</b><span>Contact our support team</span></div>
+        <div class="divider"></div>
+        <div class="contact"><span>+91 98765 43210</span><span>support@medicareplus.com</span></div>
+      </div>
+    </section>
+    <section class="login-panel">
+      <form class="signin-card" id="loginForm">
+        <div class="signin-icon"><img src="assets/images/medicare-logo-purple.png" alt="MediCare+"></div>
+        <h2>Sign In</h2>
+        <p>Please sign in to your account</p>
+        <div class="form-field">
+          <label>Select Your Role</label>
+          <div class="role-select" data-role-select tabindex="0">
+            <i class="fa-solid fa-users role-icon"></i>
+            <div class="role-current" data-role-current>Select Your Role</div>
+            <i class="fa-solid fa-chevron-down chev"></i>
+            <input type="hidden" id="selectedRole" value="">
+            <div class="role-menu">
+              <div class="role-option" data-role="admin"><i class="fa-solid fa-user-tie"></i><span>Admin</span></div>
+              <div class="role-option" data-role="doctor"><i class="fa-solid fa-user-doctor"></i><span>Doctor</span></div>
+              <div class="role-option" data-role="nurse"><i class="fa-solid fa-user-nurse"></i><span>Nurse</span></div>
+              <div class="role-option" data-role="reception"><i class="fa-solid fa-headset"></i><span>Reception</span></div>
+              <div class="role-option" data-role="pharmacy"><i class="fa-solid fa-pills"></i><span>Pharmacy</span></div>
+              <div class="role-option" data-role="bloodbank"><i class="fa-solid fa-droplet"></i><span>Blood Bank</span></div>
+              <div class="role-option" data-role="laboratory"><i class="fa-solid fa-flask-vial"></i><span>Laboratory</span></div>
+              <div class="role-option" data-role="radiology"><i class="fa-solid fa-x-ray"></i><span>Radiology</span></div>
+              <div class="role-option" data-role="patient"><i class="fa-solid fa-user-injured"></i><span>Patient</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Username</label>
+          <div class="input-wrap"><i class="fa-regular fa-user"></i><input id="username" autocomplete="username" placeholder="Enter your username"></div>
+        </div>
+        <div class="form-field">
+          <label>Password</label>
+          <div class="input-wrap"><i class="fa-solid fa-lock"></i><input id="password" type="password" autocomplete="current-password" placeholder="Enter your password"><button class="password-toggle" data-password-toggle type="button"><i class="fa-regular fa-eye-slash"></i></button></div>
+        </div>
+        <div class="form-row"><label class="check"><input type="checkbox">Remember me</label><a class="forgot" href="forgot-password.html">Forgot Password?</a></div>
+        <button class="sign-btn" type="submit"><i class="fa-solid fa-arrow-right"></i> Sign In</button>
+        <div class="auth-switch">New hospital user? <a href="signup.html">Create account</a></div>
+        <div class="secure"><span><i class="fa-solid fa-shield-halved"></i> Secure Login</span></div>
+      </form>
+    </section>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="assets/js/login.js"></script>
+</body>
+</html>
