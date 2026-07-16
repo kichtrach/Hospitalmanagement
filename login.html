@@ -9,8 +9,8 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
-<link href="assets/css/login.css?v=20260710-logos-half" rel="stylesheet"/>
-</head>
+<link href="assets/css/login.css?v=20260710-login-merged-final" rel="stylesheet"/>
+<link href="assets/css/hamburger.css" rel="stylesheet"/></head>
 <body>
 <main class="login-page">
 <section class="login-visual">
@@ -47,15 +47,20 @@
 <i class="fa-solid fa-chevron-down chev"></i>
 <input id="selectedRole" type="hidden" value=""/>
 <div class="role-menu">
-<div class="role-option" data-role="admin"><i class="fa-solid fa-user-tie"></i><span>Admin</span></div>
+<div class="role-option" data-role="patient"><i class="fa-solid fa-user-injured"></i><span>Patient</span></div>
+<div class="role-option" data-role="reception"><i class="fa-solid fa-headset"></i><span>Reception</span></div>
 <div class="role-option" data-role="doctor"><i class="fa-solid fa-user-doctor"></i><span>Doctor</span></div>
 <div class="role-option" data-role="nurse"><i class="fa-solid fa-user-nurse"></i><span>Nurse</span></div>
-<div class="role-option" data-role="reception"><i class="fa-solid fa-headset"></i><span>Reception</span></div>
-<div class="role-option" data-role="pharmacy"><i class="fa-solid fa-pills"></i><span>Pharmacy</span></div><div class="role-option" data-role="accounts"><i class="fa-solid fa-file-invoice-dollar"></i><span>Accounts</span></div>
+<div class="role-option" data-role="pharmacy"><i class="fa-solid fa-pills"></i><span>Pharmacy</span></div>
+<div class="role-option" data-role="laboratory"><i class="fa-solid fa-flask-vial"></i><span>Lab</span></div>
+<div class="role-option" data-role="recordroom"><i class="fa-solid fa-folder-open"></i><span>Record Room</span></div>
+<div class="role-option" data-role="ip"><i class="fa-solid fa-bed-pulse"></i><span>IP</span></div>
+<div class="role-option" data-role="ambulance"><i class="fa-solid fa-truck-medical"></i><span>Ambulance</span></div>
+<div class="role-option" data-role="accounts"><i class="fa-solid fa-file-invoice-dollar"></i><span>Accounts</span></div>
 <div class="role-option" data-role="bloodbank"><i class="fa-solid fa-droplet"></i><span>Blood Bank</span></div>
-<div class="role-option" data-role="laboratory"><i class="fa-solid fa-flask-vial"></i><span>Laboratory</span></div>
 <div class="role-option" data-role="radiology"><i class="fa-solid fa-x-ray"></i><span>Radiology</span></div>
-<div class="role-option" data-role="patient"><i class="fa-solid fa-user-injured"></i><span>Patient</span></div>
+<div class="role-option" data-role="hospitaladmin"><i class="fa-solid fa-hospital-user"></i><span>Hospital Admin</span></div>
+<div class="role-option" data-role="superadmin"><i class="fa-solid fa-user-shield"></i><span>Super Admin</span></div>
 </div>
 </div>
 </div>
@@ -75,6 +80,6 @@
 </section>
 </main>
 <div class="toast" id="toast"></div>
-<script src="assets/js/login.js?v=20260710-role-links"></script>
-</body>
+<script src="assets/js/login.js?v=20260710-login-merged-final"></script>
+<script src="assets/js/hamburger.js"></script></body>
 </html>

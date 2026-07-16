@@ -1,0 +1,48 @@
+/* Global HMS hamburger/sidebar behavior — loaded last on every page */
+.hms-sidebar-overlay{position:fixed;inset:0;border:0;padding:0;background:rgba(15,10,35,.46);z-index:1185;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+.hms-sidebar-overlay.show{opacity:1;visibility:visible;pointer-events:auto}
+
+@media (min-width:901px){
+  body.hms-sidebar-collapsed .sidebar,
+  body.hms-sidebar-collapsed .role-sidebar,
+  body.hms-sidebar-collapsed [data-admin-sidebar]{transform:translateX(-100%)!important}
+  body.hms-sidebar-collapsed .main,
+  body.hms-sidebar-collapsed .main-content,
+  body.hms-sidebar-collapsed .page-main,
+  body.hms-sidebar-collapsed .content-wrapper,
+  body.hms-sidebar-collapsed .al-main{margin-left:0!important;width:100%!important;max-width:none!important}
+}
+
+@media (max-width:900px){
+  .sidebar,.role-sidebar,[data-admin-sidebar]{transition:transform .24s ease!important}
+  body:not(.hms-sidebar-open) .sidebar,
+  body:not(.hms-sidebar-open) .role-sidebar,
+  body:not(.hms-sidebar-open) [data-admin-sidebar]{transform:translateX(-100%)!important}
+  body.hms-sidebar-open .sidebar,
+  body.hms-sidebar-open .role-sidebar,
+  body.hms-sidebar-open [data-admin-sidebar],
+  .sidebar.open,.role-sidebar.open,[data-admin-sidebar].open{transform:translateX(0)!important;z-index:1200!important}
+  .main,.main-content,.page-main,.content-wrapper,
+  body.hms-sidebar-collapsed .al-main{margin-left:0!important;width:100%!important;max-width:none!important}
+}
+
+/* Cross-module collapsed layout support. Every module keeps its own theme;
+   this file only normalizes the content expansion when the shared sidebar closes. */
+@media (min-width:901px){
+  body.hms-sidebar-collapsed :is(
+    .main,.main-content,.main-area,.page-main,.dashboard-main,.module-main,
+    .content-wrapper,.page-wrapper,.content-area,.app-main,.pharmacy-main,
+    .doctor-main,.nurse-main,.patient-main,.reception-main,.laboratory-main,
+    .accounts-main,.radiology-main,.blood-bank-main,.al-main
+  ){
+    margin-left:0!important;
+    width:100%!important;
+    max-width:none!important;
+  }
+
+  /* The JavaScript applies the exact computed +2px value. This transition
+     keeps the resize smooth without changing module colors or spacing. */
+  body.hms-font-boost-active [data-hms-font-boosted="1"]{
+    transition:font-size .2s ease!important;
+  }
+}

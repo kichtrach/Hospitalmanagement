@@ -112,3 +112,71 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-delete-row]').forEach(btn=>btn.addEventListener('click',()=>btn.closest('tr')?.remove()));
   document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.remove('active'));btn.classList.add('active')}));
 });
+
+
+// ===== Pharmacy operational pages v21 =====
+document.addEventListener('DOMContentLoaded',()=>{
+  const toast=(msg)=>{let t=document.querySelector('.ph-toast');if(!t){t=document.createElement('div');t.className='ph-toast';document.body.appendChild(t)}t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)};
+  document.querySelectorAll('[data-toast]').forEach(b=>b.addEventListener('click',()=>toast(b.dataset.toast)));
+  const adminModal=document.getElementById('administerModal');
+  document.querySelectorAll('[data-administer]').forEach(b=>b.addEventListener('click',()=>adminModal?.classList.add('open')));
+  document.querySelectorAll('[data-close-admin]').forEach(b=>b.addEventListener('click',()=>adminModal?.classList.remove('open')));
+  document.getElementById('confirmAdmin')?.addEventListener('click',()=>{adminModal?.classList.remove('open');location.href='ip-next-medication.html'});
+  document.getElementById('confirmContinue')?.addEventListener('click',()=>document.getElementById('successModal')?.classList.add('open'));
+  document.querySelectorAll('[data-close-success]').forEach(b=>b.addEventListener('click',()=>document.getElementById('successModal')?.classList.remove('open')));
+  const menu=document.getElementById('returnMenu');
+  document.querySelectorAll('.return-action').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();const r=b.getBoundingClientRect();menu.style.left=Math.min(r.left,innerWidth-190)+'px';menu.style.top=(r.bottom+6)+'px';menu.classList.toggle('open')}));
+  document.addEventListener('click',()=>menu?.classList.remove('open'));
+  document.querySelector('[data-view-return]')?.addEventListener('click',e=>{e.stopPropagation();menu?.classList.remove('open');document.getElementById('returnModal')?.classList.add('open')});
+  document.querySelectorAll('[data-close-return]').forEach(b=>b.addEventListener('click',()=>document.getElementById('returnModal')?.classList.remove('open')));
+});
+
+// Pharmacy invoice interactions
+document.addEventListener('DOMContentLoaded',()=>{
+ document.querySelectorAll('.payment-mode').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.payment-mode').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected')}));
+ document.querySelectorAll('.remove-item').forEach(btn=>btn.addEventListener('click',()=>{const row=btn.closest('tr'); if(row) row.remove();}));
+ document.querySelectorAll('[data-next]').forEach(btn=>btn.addEventListener('click',()=>location.href=btn.dataset.next));
+});
+
+
+// Pharmacy invoice themed date controls v32
+(() => {
+  document.querySelectorAll('.invoice-page .themed-date-field').forEach((field) => {
+    const input = field.querySelector('input[type="date"]');
+    if (!input) return;
+    field.addEventListener('click', (event) => {
+      if (event.target === input) return;
+      if (typeof input.showPicker === 'function') input.showPicker();
+      else input.focus();
+    });
+  });
+})();
+
+// v40 reusable Pharmacy themed calendar
+(function(){
+  const pad=n=>String(n).padStart(2,'0');
+  const parseISO=s=>{if(!s)return new Date();const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d)};
+  const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+  const pretty=d=>d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
+  function close(){document.querySelectorAll('.ph-date-popup').forEach(x=>x.remove())}
+  function open(input){
+    close(); let selected=parseISO(input.dataset.date), view=new Date(selected.getFullYear(),selected.getMonth(),1);
+    const pop=document.createElement('div'); pop.className='ph-date-popup'; document.body.appendChild(pop);
+    const render=()=>{
+      const y=view.getFullYear(),m=view.getMonth(),first=new Date(y,m,1),start=(first.getDay()+6)%7,days=new Date(y,m+1,0).getDate(),prevDays=new Date(y,m,0).getDate();
+      let cells='';
+      for(let i=0;i<42;i++){let day,dt,muted=false;if(i<start){day=prevDays-start+i+1;dt=new Date(y,m-1,day);muted=true}else if(i>=start+days){day=i-start-days+1;dt=new Date(y,m+1,day);muted=true}else{day=i-start+1;dt=new Date(y,m,day)}
+        const now=new Date(), cls=[muted?'muted':'',iso(dt)===iso(now)?'today':'',input.dataset.date===iso(dt)?'selected':''].filter(Boolean).join(' ');
+        cells+=`<button type="button" class="${cls}" data-date="${iso(dt)}">${day}</button>`;
+      }
+      pop.innerHTML=`<div class="ph-date-head"><button type="button" data-prev><i class="fa-solid fa-chevron-left"></i></button><div class="ph-date-title">${view.toLocaleDateString('en-US',{month:'long',year:'numeric'})}</div><button type="button" data-next><i class="fa-solid fa-chevron-right"></i></button></div><div class="ph-date-week"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div><div class="ph-date-grid">${cells}</div><div class="ph-date-foot"><button type="button" data-today>Today</button><button type="button" data-close>Close</button></div>`;
+      pop.querySelector('[data-prev]').onclick=()=>{view=new Date(y,m-1,1);render()}; pop.querySelector('[data-next]').onclick=()=>{view=new Date(y,m+1,1);render()};
+      pop.querySelector('[data-today]').onclick=()=>{const d=new Date();input.dataset.date=iso(d);input.value=pretty(d);close();input.dispatchEvent(new Event('change',{bubbles:true}))};
+      pop.querySelector('[data-close]').onclick=close;
+      pop.querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{const d=parseISO(b.dataset.date);input.dataset.date=b.dataset.date;input.value=pretty(d);close();input.dispatchEvent(new Event('change',{bubbles:true}))});
+    };
+    render(); const r=input.getBoundingClientRect(),w=310; let left=Math.min(r.left,innerWidth-w-12),top=r.bottom+6;if(top+390>innerHeight)top=Math.max(12,r.top-390);pop.style.left=Math.max(12,left)+'px';pop.style.top=top+'px';
+  }
+  document.querySelectorAll('.js-ph-date').forEach(input=>{if(input.dataset.date)input.value=pretty(parseISO(input.dataset.date));input.addEventListener('click',e=>{e.stopPropagation();open(input)});input.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(input)}})});
+  document.addEventListener('click',e=>{if(!e.target.closest('.ph-date-popup')&&!e.target.classList.contains('js-ph-date'))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+})();

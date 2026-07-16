@@ -1,1 +1,8 @@
-// Module specific javascript hook
+
+document.addEventListener('DOMContentLoaded',()=>{
+ const sidebar=document.querySelector('.sidebar');document.querySelector('#hamb')?.addEventListener('click',()=>sidebar.classList.toggle('open'));
+ document.querySelectorAll('.tabs').forEach(t=>t.addEventListener('click',e=>{if(e.target.classList.contains('tab')){t.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));e.target.classList.add('active')}}));
+ const search=document.querySelector('#testSearch'),catalog=document.querySelector('#catalog');search?.addEventListener('input',()=>{const q=search.value.toLowerCase();catalog.querySelectorAll('.catalog-row').forEach(r=>r.style.display=r.textContent.toLowerCase().includes(q)?'grid':'none')});
+ const checks=[...document.querySelectorAll('.test-check')];function update(){if(!checks.length)return;const picked=checks.filter(c=>c.checked);document.querySelectorAll('#selectedCount,#sumCount,#totalTests').forEach(x=>x.textContent=picked.length);let total=0;const box=document.querySelector('#orderSummary');if(box)box.innerHTML='';picked.forEach(c=>{total+=parseFloat(c.dataset.price);if(box){const d=document.createElement('div');d.className='order-item';d.innerHTML=`<b>${c.dataset.name}</b><span style="float:right;color:var(--lab)">₹ ${c.dataset.price}</span>`;box.appendChild(d)}});document.querySelector('#totalAmount')&&(document.querySelector('#totalAmount').textContent=total.toFixed(2))}checks.forEach(c=>c.addEventListener('change',update));update();
+ document.querySelector('#submitOrder')?.addEventListener('click',()=>{const t=document.createElement('div');t.className='toast';t.textContent='Test order submitted successfully';document.body.appendChild(t);setTimeout(()=>location.href='test-orders.html',1200)});
+});

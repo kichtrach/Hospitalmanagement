@@ -1,1 +1,86 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Activity Logs | OPD HMS</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="../assets/css/component.css"><link rel="stylesheet" href="../assets/css/dropdown.css"><link rel="stylesheet" href="../assets/css/admin.css"></head><body><div class="app"><aside class="sidebar"><div class="brand brand-logo"><img src="../assets/images/medicare-logo-white.png" alt="MediCare+ Hospital Management System"></div><div class="nav-title">MAIN</div><a class="nav-link" href="../admindashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a><a class="nav-link" href="../admin/admin-appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a><a class="nav-link" href="../admin-patients.html"><i class="fa-solid fa-user-injured"></i><span>Patients</span></a><a class="nav-link" href="../admin/admin-doctors-staff.html"><i class="fa-solid fa-user-doctor"></i><span>Doctors & Staff</span></a><a class="nav-link" href="../admin/admin-departments.html"><i class="fa-solid fa-hospital"></i><span>Departments</span></a><a class="nav-link" href="../admin/admin-consultation-rooms.html"><i class="fa-solid fa-door-open"></i><span>Consultation Rooms</span></a><a class="nav-link" href="../admin/admin-services-procedures.html"><i class="fa-solid fa-list-check"></i><span>Services & Procedures</span></a><a class="nav-link" href="../admin/admin-queue-management.html"><i class="fa-solid fa-timeline"></i><span>Queue Management</span></a><div class="nav-title">BILLING & PAYMENTS</div><a class="nav-link" href="../admin/admin-billing-invoices.html"><i class="fa-solid fa-file-invoice"></i><span>Billing & Invoices</span></a><a class="nav-link" href="../admin/admin-payments.html"><i class="fa-solid fa-credit-card"></i><span>Payments</span></a><a class="nav-link" href="../admin/admin-refunds.html"><i class="fa-solid fa-rotate-left"></i><span>Refunds</span></a><a class="nav-link" href="../admin/admin-insurance.html"><i class="fa-solid fa-shield-heart"></i><span>Insurance</span></a><div class="nav-title">INVENTORY</div><a class="nav-link" href="../admin/admin-medicine-inventory.html"><i class="fa-solid fa-capsules"></i><span>Medicine Inventory</span></a><a class="nav-link" href="../admin/admin-purchase-orders.html"><i class="fa-solid fa-cart-shopping"></i><span>Purchase Orders</span></a><a class="nav-link" href="../admin/admin-stock-management.html"><i class="fa-solid fa-boxes-stacked"></i><span>Stock Management</span></a><a class="nav-link" href="../admin/admin-expiry-management.html"><i class="fa-solid fa-calendar-xmark"></i><span>Expiry Management</span></a><div class="nav-title">REPORTS & SETTINGS</div><a class="nav-link" href="../admin/admin-reports-analytics.html"><i class="fa-solid fa-chart-column"></i><span>Reports & Analytics</span></a><a class="nav-link" href="../admin/admin-hospital-settings.html"><i class="fa-solid fa-gear"></i><span>Hospital Settings</span></a><a class="nav-link" href="../admin/admin-system-users.html"><i class="fa-solid fa-users-gear"></i><span>System Users</span></a><a class="nav-link active" href="../admin/admin-activity-logs.html"><i class="fa-solid fa-clock-rotate-left"></i><span>Activity Logs</span></a><div class="nav-sep"></div><a class="nav-link" href="../admin/admin-help-support.html"><i class="fa-regular fa-circle-question"></i><span>Help & Support</span></a></aside><main class="main"><header class="topbar"><button class="hamb" type="button"><i class="fa-solid fa-bars-staggered"></i></button><div class="page-name">Activity Logs</div><div class="search"><i class="fa-solid fa-magnifying-glass"></i><input placeholder="Search patients, appointments, doctors..." data-search-table="#mainTable"></div><div class="top-icons"><button class="icon-btn notification-btn" type="button" aria-label="Open notifications"><i class="fa-regular fa-bell"></i><span class="badge">8</span></button><button class="icon-btn mail-btn" type="button" aria-label="Open messages"><i class="fa-regular fa-envelope"></i><span class="badge">3</span></button></div><div class="user"><img class="avatar" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=120&q=80"><div><strong>Dr. Rajesh Kumar</strong><span>Administrator</span></div><i class="fa-solid fa-angle-down"></i></div></header><section class="content"><div class="hero-row"><div class="welcome"><h2>Activity Logs</h2><p>Manage activity logs with reusable HMS components.</p></div><button class="btn primary" data-modal-open="#formModal"><i class="fa-solid fa-plus"></i> Add New</button></div><div class="page-grid"><div class="card panel col-12"><div class="toolbar"><div><button class="btn active">All</button> <button class="btn">Active</button> <button class="btn">Pending</button></div><select class="filter" data-filter="#mainTable"><option value="">Filter Status</option><option>Confirmed</option><option>Pending</option><option>Active</option><option>Available</option></select></div><div class="table-wrap"><table class="table" id="mainTable"><thead><tr><th>ID / Time</th><th>Name</th><th>Category</th><th>Status</th><th>Action</th></tr></thead><tbody><tr><td>10:15 AM</td><td>Appointment Created</td><td>Receptionist</td><td><span class="status confirmed">Active</span></td><td><button class="btn" data-modal-open="#viewModal">View</button></td></tr></tbody></table></div></div></div><div class="modal" id="formModal"><div class="modal-card"><div class="modal-head"><h3>Add Activity Logs</h3><button class="close" data-modal-close>×</button></div><div class="form-grid"><div class="field"><label>Name</label><input placeholder="Enter name"></div><div class="field"><label>Category</label><select><option>General Medicine</option><option>Cardiology</option><option>Pharmacy</option></select></div><div class="field"><label>Date</label><input type="date"></div><div class="field"><label>Status</label><select><option>Active</option><option>Pending</option></select></div><div class="field" style="grid-column:1/-1"><label>Notes</label><textarea placeholder="Enter details"></textarea></div></div><button class="btn primary" style="margin-top:18px">Save</button></div></div><div class="modal" id="viewModal"><div class="modal-card"><div class="modal-head"><h3>Activity Logs Details</h3><button class="close" data-modal-close>×</button></div><p class="ap-sub">Detailed view popup with actions, print, edit and status updates.</p><button class="btn primary">Edit Details</button></div></div></section></main></div><script src="../assets/js/component.js"></script><script src="../assets/js/admin.js"></script></body></html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Activity Logs | OPD HMS</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../assets/css/component.css" rel="stylesheet"/>
+<link href="../assets/css/dropdown.css" rel="stylesheet"/>
+<link href="../assets/css/admin.css" rel="stylesheet"/>
+<link href="../assets/css/admin-activity-logs.css" rel="stylesheet"/>
+<link href="../assets/css/admin-sidebar.css" rel="stylesheet"/><link href="../assets/css/hamburger.css" rel="stylesheet"/></head>
+<body>
+<div class="al-shell">
+<aside class="sidebar" data-admin-sidebar=""></aside>
+<div class="al-main">
+<header class="al-topbar">
+<div class="al-top-left"><button aria-controls="hms-sidebar" aria-expanded="true" aria-label="Toggle navigation" class="hamb" id="sidebarToggle" type="button"><i class="fa-solid fa-bars-staggered"></i></button><strong>Activity Logs</strong></div>
+<label class="al-global-search"><i class="fa-solid fa-magnifying-glass"></i><input id="globalSearch" placeholder="Search users, roles, modules..."/></label>
+<div class="al-top-actions">
+<button class="al-icon-button"><i class="fa-regular fa-bell"></i><b>8</b></button>
+<button class="al-icon-button"><i class="fa-regular fa-envelope"></i><b>3</b></button>
+<button class="al-profile" id="profileBtn"><span class="al-avatar">RK</span><span><strong>Dr. Rajesh Kumar</strong><small>Administrator</small></span><i class="fa-solid fa-angle-down"></i></button>
+</div>
+<div class="al-profile-menu" id="profileMenu"><button><i class="fa-regular fa-user"></i> My Profile</button><button><i class="fa-solid fa-gear"></i> Settings</button><a href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></div>
+</header>
+<main class="al-content">
+<div class="al-page-title"><h1>Activity Logs</h1><p>Track and monitor all system activities and user actions.</p></div>
+<section aria-label="Activity summary" class="al-kpi-grid">
+<article class="al-kpi purple"><span class="al-kpi-icon"><i class="fa-regular fa-file-lines"></i></span><div><small>Total Logs</small><strong>12,458</strong><p>All time logs</p></div></article>
+<article class="al-kpi green"><span class="al-kpi-icon"><i class="fa-regular fa-calendar-check"></i></span><div><small>Today's Logs</small><strong>186</strong><p>Since 12:00 AM</p></div></article>
+<article class="al-kpi orange"><span class="al-kpi-icon"><i class="fa-solid fa-chart-simple"></i></span><div><small>This Week</small><strong>1,245</strong><p>05 May - 11 May 2025</p></div></article>
+<article class="al-kpi blue"><span class="al-kpi-icon"><i class="fa-regular fa-clock"></i></span><div><small>This Month</small><strong>3,842</strong><p>May 2025</p></div></article>
+</section>
+<section class="al-toolbar">
+<label class="al-control al-search-control"><input id="searchInput" placeholder="Search by user, action, module or IP..."/><i class="fa-solid fa-magnifying-glass"></i></label>
+<label class="al-select-wrap"><select id="actionFilter"><option value="">All Actions</option><option>Update</option><option>Create</option><option>Delete</option><option>Permission Change</option><option>Login</option><option>Logout</option></select></label>
+<label class="al-select-wrap"><select id="moduleFilter"><option value="">All Modules</option><option>Role &amp; Permission</option><option>System Users</option><option>System Login</option><option>System Logout</option><option>Inventory</option><option>Hospital Settings</option></select></label>
+<label class="al-select-wrap"><select id="userFilter"><option value="">All Users</option><option>Dr. Rajesh Kumar</option><option>Priya Sharma</option><option>Arun Verma</option><option>Neha Patel</option><option>Suresh Menon</option><option>Ramesh Iyer</option></select></label>
+<label class="al-select-wrap"><select id="statusFilter"><option value="">All Status</option><option>Success</option><option>Information</option><option>Warning</option></select></label>
+<button class="al-date-control" id="dateRangeBtn"><span id="dateRangeText">01 May 2025   -   12 May 2025</span><i class="fa-regular fa-calendar"></i></button>
+<button class="al-outline-btn" id="filterBtn"><i class="fa-solid fa-filter"></i> Filters</button>
+<button class="al-outline-btn" id="exportBtn"><i class="fa-solid fa-download"></i> Export Logs</button>
+</section>
+<section class="al-table-card">
+<div class="al-table-title"><h2>Activity Logs</h2><div><span id="topCount">Showing 1 to 10 of 12,458 logs</span><label class="al-select-wrap compact"><select id="pageSize"><option value="10">10 / page</option><option value="20">20 / page</option><option value="50">50 / page</option></select></label></div></div>
+<div class="al-table-scroll"><table class="al-table">
+<colgroup>
+<col class="al-col-index"/>
+<col class="al-col-date"/>
+<col class="al-col-user"/>
+<col class="al-col-action"/>
+<col class="al-col-module"/>
+<col class="al-col-details"/>
+<col class="al-col-ip"/>
+<col class="al-col-status"/>
+<col class="al-col-actions"/>
+</colgroup><thead><tr><th>#</th><th><button data-sort="date">Date &amp; Time <i class="fa-solid fa-sort"></i></button></th><th><button data-sort="user">User <i class="fa-solid fa-sort"></i></button></th><th>Action</th><th>Module</th><th>Details</th><th>IP Address</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="al-table-foot"><span id="bottomCount"></span><div class="al-pagination" id="pagination"></div><label class="al-select-wrap compact mobile-page-size"><select id="pageSizeBottom"><option value="10">10 / page</option><option value="20">20 / page</option><option value="50">50 / page</option></select></label></div>
+</section>
+</main>
+</div>
+</div>
+<div class="al-popover" hidden="" id="datePopover">
+<div class="al-popover-head"><strong>Select date range</strong><button id="dateClose">×</button></div>
+<div class="al-presets"><button data-days="0">Today</button><button data-days="7">Last 7 days</button><button data-days="30">Last 30 days</button><button data-days="month">This month</button></div>
+<div class="al-date-fields"><label>Start date<input id="startDate" type="date" value="2025-05-01"/></label><label>End date<input id="endDate" type="date" value="2025-05-12"/></label></div>
+<div class="al-popover-actions"><button id="dateCancel">Cancel</button><button class="primary" id="dateApply">Apply</button></div>
+</div>
+<div class="al-drawer-overlay" id="drawerOverlay"></div>
+<aside aria-hidden="true" class="al-drawer" id="drawer">
+<header><h2>Activity Details</h2><button id="drawerClose">×</button></header>
+<div class="al-drawer-body" id="drawerBody"></div>
+<footer><button id="drawerCloseBottom"><i class="fa-solid fa-xmark"></i> Close</button></footer>
+</aside>
+<div class="al-toast" id="toast"><i class="fa-regular fa-circle-check"></i><span>Export completed</span></div>
+<script src="../assets/js/admin-sidebar.js"></script><script src="../assets/js/component.js"></script>
+<script src="../assets/js/admin.js"></script>
+
+<script src="../assets/js/admin-activity-logs.js"></script>
+<script src="../assets/js/hamburger.js"></script></body>
+</html>

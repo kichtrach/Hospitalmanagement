@@ -1,0 +1,26 @@
+
+/* Reference-matched patient icon system — one static SVG source per icon */
+.ui-icon{display:block;width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.ui-icon-fill{fill:currentColor;stroke:none}
+.kpi-icon{width:56px!important;height:56px!important;display:grid!important;place-items:center!important;border-radius:8px!important;flex:0 0 56px!important}
+.kpi-icon .ui-icon{width:27px!important;height:27px!important;stroke-width:1.75!important}
+.icon-purple-soft{background:#f1eaff!important;color:#6037d8!important}
+.icon-purple-solid{background:linear-gradient(145deg,#5939bc,#39227f)!important;color:#fff!important}
+.quick-item{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important}
+.quick-item .ui-icon{width:36px!important;height:36px!important;stroke-width:1.75!important}
+.quick-purple{background:#f1eaff!important;color:#6037d8!important}.quick-blue{background:#e5f1ff!important;color:#0875e8!important}.quick-green{background:#e9f7ec!important;color:#079849!important}.quick-orange{background:#fff0df!important;color:#f28700!important}.quick-red{background:#ffe8eb!important;color:#ef3150!important}.quick-teal{background:#e5f7f5!important;color:#079c89!important}
+.health-mini>i{display:grid!important;place-items:center!important;width:52px!important;height:52px!important;border-radius:8px!important;flex:0 0 52px!important}
+.health-mini>i .ui-icon{width:34px!important;height:34px!important}
+.health-blood>i{background:#fff0f2!important;color:#f32648!important}.health-allergy>i{background:#eaf8ef!important;color:#0a9a4e!important}.health-chronic>i{background:#e8f3ff!important;color:#126de3!important}
+.health-chronic>i .ui-icon{stroke-width:2.15!important}
+.mini-icon{width:42px!important;height:42px!important;border-radius:8px!important;display:grid!important;place-items:center!important;flex:0 0 42px!important}
+.mini-icon .ui-icon{width:23px!important;height:23px!important;stroke-width:1.95!important}
+.appt-purple{background:#f1eaff!important;color:#6537df!important}.appt-blue{background:#e7f3ff!important;color:#0877e8!important}.appt-green{background:#e8f7ed!important;color:#0aa052!important}.appt-orange{background:#fff0df!important;color:#ef8a00!important}
+.lab-red{background:#ffe8eb!important;color:#ef3150!important}.lab-orange{background:#fff0df!important;color:#ed8800!important}.lab-purple{background:#f1eaff!important;color:#6139dc!important}.lab-blue{background:#e7f3ff!important;color:#1475e8!important}
+.patient-unified-sidebar .pus-nav .ui-icon{width:20px!important;height:20px!important;color:#fff!important;stroke-width:1.9!important}
+.top-book .ui-icon,.quick-cta .ui-icon{width:18px!important;height:18px!important;color:#fff!important}
+.tip>i .ui-icon{width:28px!important;height:28px!important;stroke-width:1.9!important}
+.icon-btn .ui-icon{width:17px!important;height:17px!important}
+.dashboard-date-control .ui-icon{width:17px!important;height:17px!important}
+/* no pseudo icon duplication */
+[class*="fa-"]::before,[class*="fa-"]::after{content:none!important}
