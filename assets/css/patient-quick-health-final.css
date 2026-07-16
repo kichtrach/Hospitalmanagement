@@ -273,3 +273,129 @@ body.patient-dashboard-page .tip-art{height:70px!important;display:flex!importan
   body.patient-dashboard-page .health-grid{grid-template-columns:1fr!important}
   body.patient-dashboard-page .health-mini.wide{grid-column:auto!important}
 }
+
+/* Font Awesome dashboard icon normalization — single source, no SVG duplication */
+body.patient-dashboard-page .side-nav a>i{width:22px;min-width:22px;text-align:center;font-size:20px;line-height:1;color:#fff}
+body.patient-dashboard-page .hamb i{font-size:22px;color:#24156f}
+body.patient-dashboard-page .top-actions i{font-size:18px;line-height:1}
+body.patient-dashboard-page .top-book i{font-size:17px;color:#fff}
+body.patient-dashboard-page #dashboardDateButton>i:first-child{font-size:16px;color:#5b3f8d}
+body.patient-dashboard-page #dashboardDateButton span:last-child i{font-size:11px;color:#5b3f8d}
+
+body.patient-dashboard-page .kpi-icon i{font-size:25px;line-height:1}
+body.patient-dashboard-page .kpi-upcoming .kpi-icon{background:#f2ebff!important;color:#6536d8!important}
+body.patient-dashboard-page .kpi-token .kpi-icon{background:#6040c3!important;color:#fff!important}
+body.patient-dashboard-page .kpi-report .kpi-icon{background:#49319a!important;color:#fff!important}
+body.patient-dashboard-page .kpi-balance .kpi-icon{background:#3f2d88!important;color:#fff!important}
+body.patient-dashboard-page .kpi-bottom b{display:grid!important;place-items:center!important;width:24px!important;height:24px!important;color:#4f2cc8!important}
+body.patient-dashboard-page .kpi-bottom b i{font-size:12px!important}
+
+body.patient-dashboard-page .quick-icon i{font-size:32px;line-height:1}
+body.patient-dashboard-page .quick-purple{background:#f1eaff!important;color:#6735d3!important}
+body.patient-dashboard-page .quick-blue{background:#e8f3ff!important;color:#1474e9!important}
+body.patient-dashboard-page .quick-green{background:#edf8ed!important;color:#11954d!important}
+body.patient-dashboard-page .quick-orange{background:#fff1e2!important;color:#f18700!important}
+body.patient-dashboard-page .quick-red{background:#ffedef!important;color:#ed354c!important}
+body.patient-dashboard-page .quick-teal{background:#e9f8f7!important;color:#119c88!important}
+
+body.patient-dashboard-page .health-icon i{font-size:29px;line-height:1}
+body.patient-dashboard-page .health-blood .health-icon{background:#fff0f2!important;color:#ed263e!important}
+body.patient-dashboard-page .health-allergy .health-icon{background:#edf9f1!important;color:#0c9b4a!important}
+body.patient-dashboard-page .health-chronic .health-icon{background:#eaf3ff!important;color:#0f70e8!important}
+
+body.patient-dashboard-page .mini-icon i{font-size:20px;line-height:1}
+body.patient-dashboard-page .appt-purple{background:#f1eaff!important;color:#6a38dd!important}
+body.patient-dashboard-page .appt-blue{background:#e9f4ff!important;color:#1776e7!important}
+body.patient-dashboard-page .appt-green{background:#eaf8ef!important;color:#11a35b!important}
+body.patient-dashboard-page .appt-orange{background:#fff1df!important;color:#f28a00!important}
+body.patient-dashboard-page .lab-red{background:#ffedef!important;color:#ef4054!important}
+body.patient-dashboard-page .lab-orange{background:#fff1df!important;color:#f18a00!important}
+body.patient-dashboard-page .lab-purple{background:#f0eaff!important;color:#6540d9!important}
+body.patient-dashboard-page .lab-blue{background:#e8f3ff!important;color:#1674e8!important}
+body.patient-dashboard-page .icon-btn i{font-size:15px;line-height:1}
+body.patient-dashboard-page .dash-lower .btn{display:flex!important;align-items:center!important;justify-content:center!important;gap:10px!important}
+body.patient-dashboard-page .dash-lower .btn i{font-size:13px!important}
+body.patient-dashboard-page .tip-icon{width:30px!important;height:30px!important;padding:12px!important;box-sizing:content-box!important;border-radius:50%!important;background:#eee3ff!important;color:#6541d5!important;font-size:27px!important;display:grid!important;place-items:center!important}
+
+/* Reference section palette */
+body.patient-dashboard-page .quick-card,
+body.patient-dashboard-page .health,
+body.patient-dashboard-page .dash-lower>.list-card{background:#fff!important;border-color:#eceaf5!important}
+body.patient-dashboard-page .quick-card{background:linear-gradient(180deg,#fff 0%,#fefeff 100%)!important}
+body.patient-dashboard-page .health{background:linear-gradient(180deg,#fff 0%,#fdfdff 100%)!important}
+body.patient-dashboard-page .tip{background:linear-gradient(90deg,#f8f3ff 0%,#f5f1ff 62%,#fbf7ff 100%)!important}
+
+
+/* Patient dashboard issue corrections — replace conflicting visual behavior */
+body.patient-dashboard-page .hamb:before{display:none!important;content:none!important}
+body.patient-dashboard-page .hamb i{display:block!important;font-size:23px!important;line-height:1!important;color:#24156f!important}
+body.patient-dashboard-page .hamb{overflow:hidden!important}
+
+body.patient-dashboard-page .health-grid{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important}
+body.patient-dashboard-page .health-mini{min-height:84px!important;padding:16px 18px!important;display:flex!important;align-items:center!important;gap:14px!important;background:#fff!important;border:1px solid #eceaf5!important;box-shadow:none!important}
+body.patient-dashboard-page .health-mini.wide{grid-column:1/-1!important;min-height:76px!important}
+body.patient-dashboard-page .health-mini .health-icon{width:50px!important;height:50px!important;flex:0 0 50px!important;border-radius:50%!important;display:grid!important;place-items:center!important;font-size:27px!important}
+body.patient-dashboard-page .health-blood .health-icon{background:#fff0f2!important;color:#f5223d!important}
+body.patient-dashboard-page .health-allergy .health-icon{background:#edf9ef!important;color:#0fa150!important}
+body.patient-dashboard-page .health-chronic .health-icon{background:#eaf3ff!important;color:#0877ee!important}
+body.patient-dashboard-page .health-mini div{display:flex!important;flex-direction:column!important;gap:3px!important;line-height:1.2!important}
+body.patient-dashboard-page .health-mini div span{font-size:13px!important;color:#30306a!important;font-weight:600!important}
+body.patient-dashboard-page .health-mini div b{font-size:17px!important;color:#0e0d58!important;font-weight:700!important}
+
+body.patient-dashboard-page .dashboard-date-control{position:relative!important;z-index:50!important}
+body.patient-dashboard-page .date-popover{position:absolute!important;right:0!important;top:43px!important;width:292px!important;padding:14px!important;background:#fff!important;border:1px solid #ded9ef!important;border-radius:3px!important;box-shadow:0 16px 36px rgba(32,22,86,.16)!important;display:none!important}
+body.patient-dashboard-page .dashboard-date-control.open .date-popover{display:block!important}
+body.patient-dashboard-page .dash-cal-head{display:grid!important;grid-template-columns:34px 1fr 34px!important;align-items:center!important;margin-bottom:12px!important}
+body.patient-dashboard-page .dash-cal-head strong{text-align:center!important;font-size:14px!important;color:#15105d!important}
+body.patient-dashboard-page .dash-cal-head button{width:32px!important;height:32px!important;border:0!important;background:#f7f4ff!important;color:#5b3f8d!important;border-radius:3px!important;cursor:pointer!important}
+body.patient-dashboard-page .dash-cal-week,body.patient-dashboard-page .dash-cal-grid{display:grid!important;grid-template-columns:repeat(7,1fr)!important;gap:4px!important;text-align:center!important}
+body.patient-dashboard-page .dash-cal-week span{font-size:11px!important;color:#71718c!important;font-weight:700!important;padding:4px 0!important}
+body.patient-dashboard-page .dash-cal-grid button{height:31px!important;border:0!important;background:#fff!important;color:#1d1b45!important;border-radius:3px!important;font-size:12px!important;cursor:pointer!important}
+body.patient-dashboard-page .dash-cal-grid button:hover{background:#f0eaff!important;color:#5b3f8d!important}
+body.patient-dashboard-page .dash-cal-grid button.selected{background:#5b3f8d!important;color:#fff!important;font-weight:700!important}
+body.patient-dashboard-page .dash-cal-grid button.muted{color:#bbb8c7!important;pointer-events:none!important}
+body.patient-dashboard-page .dash-cal-foot{display:flex!important;justify-content:space-between!important;border-top:1px solid #eceaf5!important;margin-top:10px!important;padding-top:10px!important}
+body.patient-dashboard-page .dash-cal-foot button{border:0!important;background:transparent!important;color:#5b3f8d!important;font-size:12px!important;font-weight:600!important;cursor:pointer!important}
+
+body.patient-dashboard-page .kpi-balance .kpi-icon i.fa-wallet{font-size:23px!important}
+
+/* Final dashboard issue corrections — replaces conflicting earlier rules */
+body.patient-dashboard-page .hamb:before{content:none!important;display:none!important}
+body.patient-dashboard-page .hamb i{display:block!important;font-size:24px!important;line-height:1!important;color:#31229b!important}
+body.patient-dashboard-page .hamb{overflow:visible!important;font-size:0!important}
+
+body.patient-dashboard-page .quick-item .quick-icon{width:58px!important;height:58px!important;display:grid!important;place-items:center!important;border-radius:3px!important;background:transparent!important}
+body.patient-dashboard-page .quick-item .quick-icon i{font-size:31px!important;line-height:1!important;color:inherit!important}
+body.patient-dashboard-page .quick-item{min-height:132px!important;padding:18px 10px 14px!important;gap:13px!important}
+body.patient-dashboard-page .quick-item .quick-label{font-size:14px!important;line-height:1.35!important;font-weight:600!important}
+
+body.patient-dashboard-page .health-mini{min-height:90px!important;padding:16px 18px!important;gap:14px!important}
+body.patient-dashboard-page .health-mini.wide{min-height:84px!important}
+body.patient-dashboard-page .health-mini .health-icon{width:54px!important;height:54px!important;flex:0 0 54px!important;border-radius:50%!important;display:grid!important;place-items:center!important}
+body.patient-dashboard-page .health-mini .health-icon i{display:block!important;font-size:31px!important;line-height:1!important;color:inherit!important}
+body.patient-dashboard-page .health-mini>div>span{display:block!important;color:#66627e!important;font-size:13px!important;font-weight:600!important;margin-bottom:4px!important}
+body.patient-dashboard-page .health-mini>div>b{display:block!important;color:#11135a!important;font-size:18px!important;line-height:1.2!important;font-weight:700!important}
+body.patient-dashboard-page .health-mini.wide>div>b{font-size:14px!important;font-weight:500!important}
+
+body.patient-dashboard-page .kpi-bottom span{display:flex!important;align-items:center!important;gap:8px!important}
+body.patient-dashboard-page .kpi-bottom i{font-size:14px!important;color:#5b3f8d!important}
+body.patient-dashboard-page .kpi-icon i{display:block!important;font-size:25px!important;line-height:1!important;color:inherit!important}
+body.patient-dashboard-page .kpi-balance .kpi-icon i{font-size:24px!important}
+body.patient-dashboard-page .kpi-bottom b i{font-size:13px!important}
+
+body.patient-dashboard-page .dashboard-date-control{position:absolute!important;right:28px!important;top:10px!important;z-index:70!important}
+body.patient-dashboard-page .dashboard-date-control>button{height:40px!important;padding:0 14px!important;gap:9px!important;border:1px solid #ded9ef!important;border-radius:3px!important;background:#fff!important;color:#2d2668!important;font-size:12px!important;font-weight:600!important;box-shadow:0 3px 10px rgba(30,27,75,.04)!important}
+body.patient-dashboard-page .dashboard-date-control>button i{font-size:14px!important;color:#5b3f8d!important}
+body.patient-dashboard-page .date-popover{right:0!important;top:46px!important;width:292px!important;padding:14px!important;border:1px solid #ded9ef!important;border-radius:3px!important;background:#fff!important;box-shadow:0 16px 36px rgba(32,22,86,.16)!important;z-index:100!important}
+body.patient-dashboard-page .dash-cal-head{display:flex!important;align-items:center!important;justify-content:space-between!important;margin-bottom:10px!important}
+body.patient-dashboard-page .dash-cal-head button{width:30px!important;height:30px!important;padding:0!important;border:1px solid #e3deef!important;border-radius:3px!important;background:#fff!important;color:#5b3f8d!important;display:grid!important;place-items:center!important}
+body.patient-dashboard-page .dash-cal-head strong{font-size:13px!important;color:#1d1b45!important}
+body.patient-dashboard-page .dash-cal-week{margin-bottom:4px!important}
+body.patient-dashboard-page .dash-cal-week span{padding:5px 0!important;color:#777386!important;font-size:11px!important;font-weight:600!important}
+body.patient-dashboard-page .dash-cal-foot{display:flex!important;justify-content:space-between!important;border-top:1px solid #eeeaf5!important;margin-top:10px!important;padding-top:10px!important}
+body.patient-dashboard-page .dash-cal-foot button{border:0!important;background:transparent!important;color:#5b3f8d!important;font-size:12px!important;font-weight:600!important;cursor:pointer!important}
+
+body.patient-dashboard-page .user b{display:flex!important;align-items:center!important;gap:7px!important}
+body.patient-dashboard-page .user-chevron{font-size:10px!important;color:#2d2668!important}
+body.patient-dashboard-page .dash-lower>.list-card:nth-child(3) .btn{display:flex!important;align-items:center!important;justify-content:center!important;gap:10px!important}
+body.patient-dashboard-page .dash-lower>.list-card:nth-child(3) .btn i{font-size:13px!important}
